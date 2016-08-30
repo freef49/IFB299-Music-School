@@ -7,37 +7,16 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 
 This will ultimately become the base for our website. 
 
-## License
+## Pushing repository
 
-All source code in the [Ruby on Rails Tutorial](http://railstutorial.org/)
-is available jointly under the MIT License and the Beerware License. See
-[LICENSE.md](LICENSE.md) for details.
+There are three git repositories allocated in this cloud nine! Please unless you are brad,
+only use the github repository!
 
-## Getting started
+$ git push github master 
 
-To get started with the app, clone the repo and then install the needed gems:
+The above command will push to the github repository! The following command is for brad's private bitbucket.
+Where I will store non relivant tutorials.
 
-```
-$ bundle install --without production
-```
+$ git push bitbucket master
 
-Next, migrate the database:
 
-```
-$ rails db:migrate
-```
-
-Finally, run the test suite to verify that everything is working correctly:
-
-```
-$ rails test
-```
-
-If the test suite passes, you'll be ready to run the app in a local server:
-
-```
-$ rails server
-```
-
-For more information, see the
-[*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
