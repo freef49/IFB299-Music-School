@@ -5,6 +5,8 @@ This is the sample application for
 Learn Web Development with Rails*](http://www.railstutorial.org/)
 by [Michael Hartl](http://www.michaelhartl.com/).
 
+This will ultimately become the base for our website. 
+
 ## License
 
 All source code in the [Ruby on Rails Tutorial](http://railstutorial.org/)
