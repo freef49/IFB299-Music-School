@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901050140) do
+ActiveRecord::Schema.define(version: 20160903032851) do
+# Will need to create table for teacher, admin, prefernces etc.
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.string   "last_name"
+    t.string   "gender"
+    t.text     "dob"
+    t.string   "facebook_ID"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
