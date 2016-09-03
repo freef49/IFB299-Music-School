@@ -56,3 +56,5 @@ $git push 'branch name' heroku
 Finally, at the end of each task. Record Hours spent and post hours into Slack (Hours Channel)
 
 $ rails server -b $IP -p $PORT
+
+Need to fix radio buttons on the registration page
