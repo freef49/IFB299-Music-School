@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20160903024109) do
 
+#Want to add more fields to reflect assignment.
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
