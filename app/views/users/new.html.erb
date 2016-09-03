@@ -8,34 +8,34 @@
 
 
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Mika"%>
       
       <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: 'form-control'  %>
+      <%= f.text_field :last_name, class: 'form-control', placeholder: "Mika"  %>
       
       <%= f.label :Date_Of_Birth %>
-      <%= f.text_field :dob, class: 'form-control'  %>
+      <%= f.text_field :dob, class: 'form-control', placeholder: "DD/MM/YYYY"  %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control'  %>
+      <%= f.email_field :email, class: 'form-control', placeholder: "example@gmail.com"  %>
       
       <%= radio_button_tag(:gender, "Male") %>
       <%= label_tag(:male, "Male") %>
       <%= radio_button_tag(:gender, "Female") %>
       <%= label_tag(:female, "Female") %>
-      <%= radio_button_tag(:gender, "Other") %>
+      <%= radio_button_tag(:gender, "Other", :checked) %>
       <%= label_tag(:other, "Other") %>
 
 <br><br>
 
       <%= f.label :Facebook_ID %>
-      <%= f.text_field :facebook_ID %>
+      <%= f.text_field :facebook_ID, placeholder: "www.facebook.com/Mika_Williams_Music_School" %>
       
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control'  %>
+      <%= f.password_field :password, class: 'form-control', placeholder: "Secret!"  %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control'  %>
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Secret!"  %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
