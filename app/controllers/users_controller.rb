@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   def index #Display all users.
     @users = User.paginate(page: params[:page])
   end
+  
+  def index_teacher #Display all users.
+    @users = User.paginate(page: params[:page])
+  end
 
   def create
     @user = User.new(user_params)
@@ -47,6 +51,12 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
+    redirect_to users_url
+  end
+  
+  def make_admin
+    User.find(params[:id]).m_admin
+    flash[:success] = "User promoted to admin"
     redirect_to users_url
   end
   

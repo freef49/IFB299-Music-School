@@ -9,20 +9,40 @@
 
 
 User.create!(name:  "Mika",
-            last_name: "Williams",
-            dob: "11/11/1111",
-            gender: "Other",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: true)
+              last_name: "Williams",
+              dob: "11/11/1111",
+              gender: "Other",
+              email: "example@railstutorial.org",
+              password:              "foobar",
+              password_confirmation: "foobar",
+              admin: true)
+             
+User.create!(name:  "Mr",
+               email: "teacher1@teacher.org",
+               last_name: "Teacher",
+               dob: "11/11/1111",
+               gender: "Male",
+               teacher_qualifications: "Finsished Highschool",
+               password:              "password",
+               password_confirmation: "password",
+               teacher: true)
+               
+User.create!(name:  "Ms",
+               email: "teacher2@teacher.org",
+               last_name: "Teacher",
+               dob: "11/11/1111",
+               gender: "Female",
+               teacher_qualifications: "Finsished Highschool",
+               password:              "password",
+               password_confirmation: "password",
+               teacher: true)
 
-99.times do |n|
+20.times do |n|
   name  = Faker::Name.first_name
   last_name = Faker::Name.last_name
   dob = "11/11/1111"
   gender = "Other"
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n+1}@student.org"
   password = "password"
   User.create!(name:  name,
                email: email,
@@ -31,21 +51,4 @@ User.create!(name:  "Mika",
                gender: gender,
                password:              password,
                password_confirmation: password)
-end
-
-10.times do |m|
-  name  = Faker::Name.prefix
-  last_name = Faker::Name.last_name
-  dob = "11/11/1111"
-  gender = "Other"
-  email = "Teacher-#{m+1}@teacher.org"
-  password = "password"
-  User.create!(name:  name,
-               email: email,
-               last_name: last_name,
-               dob: dob,
-               gender: gender,
-               password:              password,
-               password_confirmation: password,
-               teacher: true)
 end

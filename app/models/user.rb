@@ -43,4 +43,23 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
   
+  def m_admin
+    update_attribute(:admin, true)
+  end
+  
+  def teacher?
+    if self.teacher.nil?
+      return false
+    else
+      return true
+    end
+  end
+  
+  def admin?
+    if self.admin.nil?
+      return false
+    else
+      return true
+    end
+  end
 end

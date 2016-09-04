@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :teacher_availabilities
-  resources :teachers
-  resources :meetings
   get 'sessions/new'
 
   root 'static_pages#home'
@@ -11,6 +8,8 @@ Rails.application.routes.draw do
   get  '/contact', to: 'static_pages#contact'
   get  '/timetable', to: 'static_pages#timetable'
   get  '/signup',  to: 'users#new'
+  get  '/students',  to: 'users#index'
+  get  '/teachers',  to: 'users#index_teacher'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
