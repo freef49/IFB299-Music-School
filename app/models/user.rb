@@ -9,14 +9,14 @@ class User < ApplicationRecord
   validates :name,  presence: true, length: { maximum: 50 }, format: { with: VALID_NAME_REGEX }
   validates :last_name, presence: true, length: { maximum: 50 }, format: { with: VALID_NAME_REGEX }
   validates :dob, presence: true, length: {maximum: 12}, format: { with: VALID_DOB_REGEX }
-  validates :gender, length: { maximum: 10 }
+  validates :gender, presence: true, length: { maximum: 10 }
   validates :facebook_ID, length: { maximum: 255 }
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }, 
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-
+  validates :teacher_qualifications, length: { maximum: 255 }
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -49,6 +49,8 @@ class User < ApplicationRecord
   
   def teacher?
     if self.teacher.nil?
+      return false
+    elsif self.teacher == false
       return false
     else
       return true

@@ -18,12 +18,12 @@
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control', placeholder: "example@gmail.com"  %>
       
-    <%= radio_button_tag(:gender, "Male") %>
-    <%= label_tag(:male, "Male") %>
-    <%= radio_button_tag(:gender, "Female") %>
-    <%= label_tag(:female, "Female") %>
-    <%= radio_button_tag(:gender, "Other", :checked) %>
-    <%= label_tag(:other, "Other") %>
+    <%= f.radio_button(:gender, "Male") %>
+    <%= label_tag(:gender, "Male") %>
+    <%= f.radio_button(:gender, "Female") %>
+    <%= label_tag(:gender, "Female") %>
+    <%= f.radio_button(:gender, "Other") %>
+    <%= label_tag(:gender, "Other") %>
 
 <br><br>
 
@@ -35,7 +35,17 @@
 
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Secret!"  %>
+    <br><br>
 
+    <%= f.label :teacher %>
+    <span>Are you applying to become a teacher here?</span>
+    <%= f.check_box(:teacher) %>
+     
+    <br><br>    
+    <%= f.label :teacher_qualifications, "Qualifications?" %>
+    <%= f.text_field :teacher_qualifications, placeholder: "Graduated from University" %>
+    <br><br>
+        
     <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
