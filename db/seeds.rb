@@ -12,7 +12,7 @@ User.create!(name:  "Mika",
               last_name: "Williams",
               dob: "11/11/1111",
               gender: "Other",
-              email: "example@railstutorial.org",
+              email: "test@test.org",
               password:              "password",
               password_confirmation: "password",
               admin: true)
