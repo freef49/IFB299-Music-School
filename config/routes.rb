@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :teacher_availabilities
+  resources :teachers
+  resources :meetings
   get 'sessions/new'
 
   root 'static_pages#home'

@@ -6,6 +6,6 @@
   <% if current_user.admin? && !current_user?(user) %>
     <br>
     <%= link_to "Delete |", user, method: :delete, data: { confirm: "You sure?" } %>
-    <%= link_to " Make Admin", user, method: :make_admin, data: { confirm: "You sure?" } %>
+    <%= link_to " Make Admin", user, data: { confirm: "You sure?" } %>
   <% end %>
 </li>
