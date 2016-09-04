@@ -13,8 +13,8 @@ User.create!(name:  "Mika",
               dob: "11/11/1111",
               gender: "Other",
               email: "example@railstutorial.org",
-              password:              "foobar",
-              password_confirmation: "foobar",
+              password:              "password",
+              password_confirmation: "password",
               admin: true)
              
 User.create!(name:  "Mr",
