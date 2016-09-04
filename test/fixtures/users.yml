@@ -6,3 +6,12 @@ michael:
   dob: 11/12/1234
   gender: Male
   password_digest: <%= User.digest('password') %>
+  
+archer:
+  name: Sterling
+  last_name: Archer
+  email: duchess@example.gov
+  dob: 20/08/1989
+  gender: Male
+  password_digest: <%= User.digest('password') %>
+
