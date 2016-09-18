@@ -1,5 +1,8 @@
 # IFB 299
 
+## Sprint and release Plan
+The spring and release plan in developement can be found here:
+https://docs.google.com/document/d/13GtgIFlC-mK1TnwiQaYQo_29Fug1yfPcqBq6GHSP12I/
 
 ## Pushing repository
 
@@ -45,4 +48,4 @@ Finally, at the end of each task. Record Hours spent and post hours into Slack (
 
 $ rails server -b $IP -p $PORT
 
-Need to fix radio buttons on the registration page
+
