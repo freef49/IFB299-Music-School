@@ -1,16 +1,4 @@
-# Ruby on Rails Tutorial sample application
-
-This is the sample application for
-[*Ruby on Rails Tutorial:
-Learn Web Development with Rails*](http://www.railstutorial.org/)
-by [Michael Hartl](http://www.michaelhartl.com/).
-
-This will ultimately become the base for our website. 
-
-<%= #link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
-<%=# link_to image_tag("kitten.jpg", alt: "Photo of kitten"),
-            'http://rubyonrails.org/' %>
+# IFB 299
 
 
 ## Pushing repository
