@@ -7,6 +7,8 @@
     Come join the discussion on <a href="https://www.facebook.com/mikasmusicschool/" >facebook</a> now!
   </h2>
 
+<% if logged_in?%>
+<% else %>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-
+<% end %>
 </div>
