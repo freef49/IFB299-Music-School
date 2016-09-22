@@ -6,6 +6,8 @@ michael:
   dob: 11/12/1234
   gender: Male
   password_digest: <%= User.digest('password') %>
+  parent_name: Sally
+  parent_email: sally@test.com
   admin: true
   
 archer:
@@ -14,6 +16,8 @@ archer:
   email: duchess@example.gov
   dob: 20/08/1989
   gender: Male
+  parent_name: Mallary
+  parent_email: MallaryArcher@isis.com
   password_digest: <%= User.digest('password') %>
 
 lana:

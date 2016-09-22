@@ -7,13 +7,8 @@
     Come join the discussion on <a href="https://www.facebook.com/mikasmusicschool/" >facebook</a> now!
   </h2>
 
+<% if logged_in?%>
+<% else %>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  
-  
-<br><br><br><br><h3>We are located here:</h3>
-  <iframe src="//www.google.com/maps/embed/v1/place?q=qut
-      &zoom=11
-      &key=AIzaSyAr0zvXU-yvhTClOyfJeQEwCEITYbDhrCI">
-  </iframe>
-
+<% end %>
 </div>

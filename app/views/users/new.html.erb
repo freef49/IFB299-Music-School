@@ -10,7 +10,8 @@
     
     <%= f.label :teacher %>
     <span>Are you applying to become a teacher here?</span>
-    <%= f.check_box(:teacher) %>
+    <%= f.check_box :teacher %>
+    <br>
     
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', placeholder: "Mika"%>
@@ -23,14 +24,13 @@
 
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control', placeholder: "example@gmail.com"  %>
-      
-    <%= f.radio_button(:gender, "Male") %>
-    <%= label_tag(:gender, "Male") %>
-    <%= f.radio_button(:gender, "Female") %>
-    <%= label_tag(:gender, "Female") %>
-    <%= f.radio_button(:gender, "Other") %>
-    <%= label_tag(:gender, "Other") %>
-
+    
+    <br>  
+    <span><b>Male</b><%= f.radio_button :gender, "Male"  %></span>
+    <span><b>Female</b><%= f.radio_button :gender, "Female" %></span>
+    <span><b>Other</b><%= f.radio_button :gender, "Other", :checked => true %></span>
+    <br>
+    
 <br><br>
 
     <%= f.label :Facebook_ID %>
@@ -42,7 +42,13 @@
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Secret!"  %>
     <br><br>
+    
+    <%= f.label :parent_name %>
+    <%= f.text_field :parent_name, class: 'form-control', placeholder: "Mum or Dad" %>
 
+    <%= f.label :parent_email %>
+    <%= f.text_field :facebook_ID, class: 'form-control', placeholder: "mum@parent.com" %>
+    
     <br><br>    
     <%= f.label :teacher_qualifications, "Qualifications?" %>
     <%= f.text_field :teacher_qualifications, class: 'form-control', placeholder: "Graduated from University" %>

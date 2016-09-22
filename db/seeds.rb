@@ -25,7 +25,7 @@ User.create!(name:  "Mr",
                gender: "Male",
                teacher_qualifications: "Finsished Highschool",
                password:              "password",
-               password_confirmation: "password",
+               password_confirmation: "password", 
                teacher: true)
                
 User.create!(name:  "Ms",

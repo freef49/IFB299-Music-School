@@ -9,6 +9,10 @@ Release 1 for IFB299. With all login and signup functionality completed.
 The spring and release plan in developement can be found here:
 https://docs.google.com/document/d/13GtgIFlC-mK1TnwiQaYQo_29Fug1yfPcqBq6GHSP12I/
 
+Website hosted at https://ifb299-mikamusic-fm.herokuapp.com/
+
+
+
 ## Pushing repository
 
 There are three git repositories allocated in this cloud nine! Please unless you are brad,

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   #This is too be discussed with the client team.
   
   VALID_NAME_REGEX = /[a-z]+/
+  VALID_PARENT_REGEX = /[a-z]*/
   VALID_DOB_REGEX = /\A(?:0?[1-9]|[1-2]\d|3[01])\/(?:0?[1-9]|1[0-2])\/\d{4}\Z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   
@@ -14,14 +15,18 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { maximum: 50 }, format: { with: VALID_NAME_REGEX }
   validates :dob, presence: true, length: {maximum: 12}, format: { with: VALID_DOB_REGEX }
   validates :gender, presence: true, length: { maximum: 10 }
-  validates :facebook_ID, length: { maximum: 255 }
-  validates :email, presence: true, length: { maximum: 255 },
+  validates :facebook_ID, length: { maximum: 100 }
+  validates :email, presence: true, length: { maximum: 100 },
                     format: { with: VALID_EMAIL_REGEX }, 
                     uniqueness: { case_sensitive: false }
   has_secure_password
   #Password has no regex at current stage. Only needs to be longer than 6 characters. 
   #Too discuss with client team.
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  
+  #validates :parent_name, length: { maximum: 50 }, format: { with: VALID_PARENT_REGEX }
+  #validates :parent_email, length: { maximum: 100 }
+                    
   validates :teacher_qualifications, length: { maximum: 255 }
 
   def User.digest(string)
