@@ -1,3 +1,6 @@
+# User controller test. Completes tests for two different users. One admin and the other a normal user.
+# Makes sure admin has all his privliges.
+# Makes sure a user can login and that index of students incriments on successful registration.
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest

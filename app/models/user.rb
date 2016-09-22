@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
+  #Before saving, convert email to lower case. This will save many problems.
   before_save { self.email = email.downcase }
+  
+  #Current REGEX's used for user registration. May need to add regex for facebookID. 
+  #This is too be discussed with the client team.
   
   VALID_NAME_REGEX = /[a-z]+/
   VALID_DOB_REGEX = /\A(?:0?[1-9]|[1-2]\d|3[01])\/(?:0?[1-9]|1[0-2])\/\d{4}\Z/
@@ -15,6 +19,8 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX }, 
                     uniqueness: { case_sensitive: false }
   has_secure_password
+  #Password has no regex at current stage. Only needs to be longer than 6 characters. 
+  #Too discuss with client team.
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :teacher_qualifications, length: { maximum: 255 }
 

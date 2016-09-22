@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
- 
+ #Functions for the sessions controller.
   def new
   end
 
+  #If user is in system and authenticated. Create session.
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])

@@ -8,6 +8,7 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
   
+  #This function has currently been disabled for first release. To discuss with client team.
   def make_admin
       flash[:success] = "This feature is currently Disabled"
       redirect_to users_url
