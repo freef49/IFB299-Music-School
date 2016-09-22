@@ -24,12 +24,9 @@
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control', placeholder: "example@gmail.com"  %>
       
-    <%= f.radio_button(:gender, "Male") %>
-    <%= label_tag(:gender, "Male") %>
-    <%= f.radio_button(:gender, "Female") %>
-    <%= label_tag(:gender, "Female") %>
-    <%= f.radio_button(:gender, "Other") %>
-    <%= label_tag(:gender, "Other") %>
+    <span><b>Male</b><%= f.radio_button :gender, "Male"  %></span>
+    <span><b>Female</b><%= f.radio_button :gender, "Female" %></span>
+    <span><b>Other</b><%= f.radio_button :gender, "Other", :checked => true %></span>
 
 <br><br>
 
