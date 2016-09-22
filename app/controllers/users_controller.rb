@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   
     def user_params
       params.require(:user).permit(:name, :last_name, :dob, :email, :gender, :password, :facebook_ID,
-                                   :password_confirmation, :teacher, :parent_name, :parent_email, :teacher_qualifications)
+                                   :password_confirmation, :teacher, :teacher_qualifications)
     end
     
     def logged_in_user

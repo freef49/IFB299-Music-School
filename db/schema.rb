@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20160919120032) do
 
-  #Current Table of data stored for release 1. Addition tables to be created for release 2.
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"

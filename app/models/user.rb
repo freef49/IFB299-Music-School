@@ -24,8 +24,8 @@ class User < ApplicationRecord
   #Too discuss with client team.
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   
-  validates :parent_name, length: { maximum: 50 }, format: { with: VALID_PARENT_REGEX }
-  validates :parent_email, length: { maximum: 100 }
+  #validates :parent_name, length: { maximum: 50 }, format: { with: VALID_PARENT_REGEX }
+  #validates :parent_email, length: { maximum: 100 }
                     
   validates :teacher_qualifications, length: { maximum: 255 }
 
