@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# Release 1
+
+Release 1 for IFB299. With all login and signup functionality completed.
+=======
 # IFB 299
 
 ## Sprint and release Plan
@@ -52,4 +57,5 @@ Finally, at the end of each task. Record Hours spent and post hours into Slack (
 
 $ rails server -b $IP -p $PORT
 
+>>>>>>> master
 
