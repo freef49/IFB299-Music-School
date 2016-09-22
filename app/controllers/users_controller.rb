@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  #Before aftions for users controller. 
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: [:destroy]
@@ -61,10 +62,11 @@ class UsersController < ApplicationController
   end
   
   private
-
+  #Private functions for the users controller. 
+  
     def user_params
       params.require(:user).permit(:name, :last_name, :dob, :email, :gender, :password, :facebook_ID,
-                                   :password_confirmation, :teacher, :teacher_qualifications)
+                                   :password_confirmation, :teacher, :parent_name, :parent_email, :teacher_qualifications)
     end
     
     def logged_in_user

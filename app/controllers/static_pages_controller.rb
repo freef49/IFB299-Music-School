@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  #Functions for the static page controller. Return nothing.
+  
   def home
   end
 
