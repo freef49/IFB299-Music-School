@@ -26,6 +26,8 @@ User.create!(name:  "Mr",
                teacher_qualifications: "Finsished Highschool",
                password:              "password",
                password_confirmation: "password",
+               parent_name: "Sally",
+               parent_email: "sally@test.com",
                teacher: true)
                
 User.create!(name:  "Ms",
