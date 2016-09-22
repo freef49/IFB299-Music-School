@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+# Seeds for the user database. 
+# Currently seeds one admin, two teachers and 20 students. 
 
 User.create!(name:  "Mika",
               last_name: "Williams",
