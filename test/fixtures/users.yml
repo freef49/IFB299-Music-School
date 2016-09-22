@@ -1,4 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Test users currently used for website.
 michael:
   name: Michael
   last_name: Example
