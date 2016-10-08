@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'index/show'
+
+  get 'index/new'
+
+  get 'index/edit'
+
   #Routes for each page. Current Root is the home page
   root 'static_pages#home'
   
