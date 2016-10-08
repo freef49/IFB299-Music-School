@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008034826) do
+ActiveRecord::Schema.define(version: 20161008035204) do
 
   create_table "availabilities", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "email",      limit: 50
+    t.         "day"
+    t.time     "time"
+    t.time     "duration"
+    t.index ["email"], name: "index_availabilities_on_email"
   end
 
   create_table "free_play_rooms", force: :cascade do |t|
