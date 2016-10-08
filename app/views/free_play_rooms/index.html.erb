@@ -1,0 +1,25 @@
+<% provide(:title, "Free Play Room") %>
+<h1>Current Session in the Free Play Room</h1>
+
+
+
+<table class="listing" sumarry="Free Play Room Bookings">
+  <tr class="header">
+  <th>User Email</th>
+  <th>Date</th>
+  <th>Time</th>
+  <th>Duration</th>
+  </tr>
+  
+  <% @free_play_rooms.each do |free_play_room| %>
+  <tr>
+    <td><%= free_play_room.user_email%></td>
+    <td><%= free_play_room.date%></td>
+    <td><%= free_play_room.time%></td>
+    <td><%= free_play_room.duration%></td>
+  </tr>
+  <% end %>
+  
+  
+</table>
+
