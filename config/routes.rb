@@ -1,21 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'availabilities/index'
-
-  get 'availabilities/show'
-
-  get 'availabilities/new'
-
-  get 'availabilities/edit'
-
-  get 'availabilities/delete'
-
-  get 'index/show'
-
-  get 'index/new'
-
-  get 'index/edit'
-
   #Routes for each page. Current Root is the home page
   root 'static_pages#home'
   
@@ -35,6 +19,9 @@ Rails.application.routes.draw do
 
   get  '/book_session',  to: 'free_play_rooms#new'
   get  '/current_sessions',  to: 'free_play_rooms#index'
+  
+  get  '/new_availability',  to: 'availabilities#new'
+  get  '/my_availabilities',  to: 'availabilities#index'
   
   resources :users
   resources :free_play_rooms do
