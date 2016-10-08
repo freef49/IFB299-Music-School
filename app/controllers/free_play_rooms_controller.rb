@@ -29,7 +29,7 @@ class FreePlayRoomsController < ApplicationController
     @free_play_rooms = FreePlayRoom.find(params[:id])
     if @free_play_rooms.update_attributes(free_play_room_params)
       # Handle a successful update.
-      flash[:success] = "Profile updated"
+      flash[:success] = "Booking updated"
       redirect_to(current_sessions_path)
     else
       render('edit')
@@ -37,9 +37,14 @@ class FreePlayRoomsController < ApplicationController
   end
 
   def delete
+    @free_play_rooms = FreePlayRoom.find(params[:id])
   end
   
   def destroy
+    @free_play_rooms = FreePlayRoom.find(params[:id])
+    @free_play_rooms.destroy
+    flash[:success] = "Booking deleted"
+    redirect_to(current_sessions_path)
   end
   
   private
