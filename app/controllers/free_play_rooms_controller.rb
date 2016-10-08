@@ -17,7 +17,6 @@ class FreePlayRoomsController < ApplicationController
       flash[:success] = "Booking Made!"
       redirect_to(current_sessions_path)
     else
-      flash[:fail] = "Booking not Made!"
       render('new')
     end
   end
