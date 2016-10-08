@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'free_play_rooms/index'
+
+  get 'free_play_rooms/show'
+
+  get 'free_play_rooms/new'
+
+  get 'free_play_rooms/edit'
+
+  get 'free_play_rooms/delete'
+
   get 'sessions/new'
 
   #Routes for each page. Current Root is the home page
