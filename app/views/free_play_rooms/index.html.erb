@@ -19,8 +19,10 @@
     <td><%= free_play_room.time%></td>
     <td><%= free_play_room.duration%></td>
     <td>
+      <% if free_play_room.user_email == current_user.email %>
       <%= link_to("Edit", edit_free_play_room_path(free_play_room), :class => 'action edit') %>
       <%= link_to("Delete", delete_free_play_room_path(free_play_room), :class => 'action delete') %>
+      <% end %>
     </td>
   </tr>
   <% end %>
