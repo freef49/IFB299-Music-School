@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008032542) do
+ActiveRecord::Schema.define(version: 20161008033511) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,8 +18,13 @@ ActiveRecord::Schema.define(version: 20161008032542) do
   end
 
   create_table "free_play_rooms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "email",      limit: 50
+    t.date     "date"
+    t.time     "time"
+    t.time     "duration"
+    t.index ["email"], name: "index_free_play_rooms_on_email"
   end
 
   create_table "interviews", force: :cascade do |t|
