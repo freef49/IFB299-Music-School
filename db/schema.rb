@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008035510) do
+ActiveRecord::Schema.define(version: 20161008042113) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at",            null: false
@@ -101,6 +101,10 @@ ActiveRecord::Schema.define(version: 20161008035510) do
     t.boolean  "admin"
     t.string   "parent_name"
     t.string   "parent_email"
+    t.string   "address"
+    t.string   "parent_moblie"
+    t.boolean  "user_recieve_emails"
+    t.boolean  "parent_recieve_emails"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
