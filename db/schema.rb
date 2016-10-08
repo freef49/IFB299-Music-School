@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008043031) do
+ActiveRecord::Schema.define(version: 20161008100220) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at",            null: false
@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(version: 20161008043031) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "user_email", limit: 50
-    t.date     "date"
+    t.string   "date"
     t.string   "time"
     t.string   "duration"
+    t.integer  "user_id"
     t.index ["user_email"], name: "index_free_play_rooms_on_user_email"
   end
 

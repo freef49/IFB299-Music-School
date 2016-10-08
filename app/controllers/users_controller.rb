@@ -43,7 +43,6 @@ class UsersController < ApplicationController
       # Handle a successful update.
       flash[:success] = "Profile updated"
       redirect_to @user
-
     else
       render 'edit'
     end

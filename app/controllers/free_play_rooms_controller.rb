@@ -12,6 +12,14 @@ class FreePlayRoomsController < ApplicationController
   end
   
   def create
+    @free_play_rooms = FreePlayRoom.new(free_play_room_params)
+    if @free_play_rooms.save
+      flash[:success] = "Booking Made!"
+      redirect_to(current_sessions_path)
+    else
+      flash[:fail] = "Booking not Made!"
+      render('new')
+    end
   end
 
   def edit
@@ -24,5 +32,11 @@ class FreePlayRoomsController < ApplicationController
   end
   
   def destroy
+  end
+  
+  private
+  
+  def free_play_room_params
+    params.require(:free_play_room).permit(:user_email, :date, :time, :duration)
   end
 end
