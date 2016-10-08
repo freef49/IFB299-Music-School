@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008100220) do
+ActiveRecord::Schema.define(version: 20161008104846) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at",            null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20161008100220) do
     t.string   "day",        limit: 15
     t.string   "time"
     t.string   "duration"
+    t.integer  "user_id"
     t.index ["user_email"], name: "index_availabilities_on_user_email"
   end
 
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161008100220) do
     t.date     "date"
     t.string   "time"
     t.string   "duration"
+    t.integer  "user_id"
     t.index ["user_email"], name: "index_interviews_on_user_email"
   end
 
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(version: 20161008100220) do
     t.string   "lesson_type"
     t.string   "lesson_duration"
     t.string   "lesson_cost"
+    t.integer  "user_id"
     t.index ["user_email"], name: "index_lessons_on_user_email"
   end
 
@@ -68,6 +71,7 @@ ActiveRecord::Schema.define(version: 20161008100220) do
     t.string   "instrument",                 limit: 50
     t.string   "preferred_teacher_language", limit: 30
     t.string   "preferred_teacher_gender",   limit: 10
+    t.integer  "user_id"
     t.index ["user_email"], name: "index_preferences_on_user_email"
   end
 
@@ -83,6 +87,7 @@ ActiveRecord::Schema.define(version: 20161008100220) do
     t.string   "language_1_skils"
     t.string   "language_2"
     t.string   "language_2_skills"
+    t.integer  "user_id"
     t.index ["user_email"], name: "index_skills_on_user_email"
   end
 

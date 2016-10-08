@@ -22,9 +22,18 @@ class FreePlayRoomsController < ApplicationController
   end
 
   def edit
+    @free_play_rooms = FreePlayRoom.find(params[:id])
   end
   
   def update
+    @free_play_rooms = FreePlayRoom.find(params[:id])
+    if @free_play_rooms.update_attributes(free_play_room_params)
+      # Handle a successful update.
+      flash[:success] = "Profile updated"
+      redirect_to(current_sessions_path)
+    else
+      render('edit')
+    end
   end
 
   def delete

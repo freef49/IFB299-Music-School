@@ -1,5 +1,5 @@
 <% provide(:title, "Free Play Room") %>
-<h1>Current Session in the Free Play Room</h1>
+<h1>Current Sessions in the Free Play Room</h1>
 
 
 
@@ -9,6 +9,7 @@
   <th>Date</th>
   <th>Time</th>
   <th>Duration</th>
+  <th></th>
   </tr>
   
   <% @free_play_rooms.each do |free_play_room| %>
@@ -17,6 +18,10 @@
     <td><%= free_play_room.date%></td>
     <td><%= free_play_room.time%></td>
     <td><%= free_play_room.duration%></td>
+    <td>
+      <%= link_to("Edit", edit_free_play_room_path(free_play_room), :class => 'action edit') %>
+      <%= link_to("Delete", delete_free_play_room_path(free_play_room), :class => 'action delete') %>
+    </td>
   </tr>
   <% end %>
   
