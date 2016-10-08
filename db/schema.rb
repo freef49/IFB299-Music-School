@@ -15,38 +15,38 @@ ActiveRecord::Schema.define(version: 20161008043031) do
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.string   "email",      limit: 50
+    t.string   "user_email", limit: 50
     t.string   "day",        limit: 15
     t.string   "time"
     t.string   "duration"
-    t.index ["email"], name: "index_availabilities_on_email"
+    t.index ["user_email"], name: "index_availabilities_on_user_email"
   end
 
   create_table "free_play_rooms", force: :cascade do |t|
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.string   "email",      limit: 50
+    t.string   "user_email", limit: 50
     t.date     "date"
     t.string   "time"
     t.string   "duration"
-    t.index ["email"], name: "index_free_play_rooms_on_email"
+    t.index ["user_email"], name: "index_free_play_rooms_on_user_email"
   end
 
   create_table "interviews", force: :cascade do |t|
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "email",         limit: 50
+    t.string   "user_email",    limit: 50
     t.string   "teacher_email", limit: 50
     t.date     "date"
     t.string   "time"
     t.string   "duration"
-    t.index ["email"], name: "index_interviews_on_email"
+    t.index ["user_email"], name: "index_interviews_on_user_email"
   end
 
   create_table "lessons", force: :cascade do |t|
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.string   "email",           limit: 50
+    t.string   "user_email",      limit: 50
     t.string   "student_email",   limit: 50
     t.date     "start_date"
     t.date     "end_date"
@@ -55,25 +55,25 @@ ActiveRecord::Schema.define(version: 20161008043031) do
     t.string   "lesson_type"
     t.string   "lesson_duration"
     t.string   "lesson_cost"
-    t.index ["email"], name: "index_lessons_on_email"
+    t.index ["user_email"], name: "index_lessons_on_user_email"
   end
 
   create_table "preferences", force: :cascade do |t|
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.string   "email",                      limit: 50
+    t.string   "user_email",                 limit: 50
     t.string   "preferred_day",              limit: 15
     t.string   "preferred_time"
     t.string   "instrument",                 limit: 50
     t.string   "preferred_teacher_language", limit: 30
     t.string   "preferred_teacher_gender",   limit: 10
-    t.index ["email"], name: "index_preferences_on_email"
+    t.index ["user_email"], name: "index_preferences_on_user_email"
   end
 
   create_table "skills", force: :cascade do |t|
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-    t.string   "email",               limit: 50
+    t.string   "user_email",          limit: 50
     t.string   "instrument_1"
     t.string   "instrument_1_skils"
     t.string   "instrument_2"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20161008043031) do
     t.string   "language_1_skils"
     t.string   "language_2"
     t.string   "language_2_skills"
-    t.index ["email"], name: "index_skills_on_email"
+    t.index ["user_email"], name: "index_skills_on_user_email"
   end
 
   create_table "users", force: :cascade do |t|
