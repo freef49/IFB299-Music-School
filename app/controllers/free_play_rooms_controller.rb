@@ -37,6 +37,6 @@ class FreePlayRoomsController < ApplicationController
   private
   
   def free_play_room_params
-    params.require(:free_play_room).permit(:user_email, :date, :time, :duration)
+    params.require(:free_play_room).permit(:user_email, :date, :time, :duration, :user_id)
   end
 end
