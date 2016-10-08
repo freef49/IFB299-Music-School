@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20161008035510) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "email",      limit: 50
-    t.         "day"
-    t.time     "time"
-    t.time     "duration"
+    t.string   "day",        limit: 15
+    t.string   "time"
+    t.string   "duration"
     t.index ["email"], name: "index_availabilities_on_email"
   end
 
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20161008035510) do
     t.datetime "updated_at",            null: false
     t.string   "email",      limit: 50
     t.date     "date"
-    t.time     "time"
-    t.time     "duration"
+    t.string   "time"
+    t.string   "duration"
     t.index ["email"], name: "index_free_play_rooms_on_email"
   end
 
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20161008035510) do
     t.string   "email",         limit: 50
     t.string   "teacher_email", limit: 50
     t.date     "date"
-    t.time     "time"
-    t.time     "duration"
+    t.string   "time"
+    t.string   "duration"
     t.index ["email"], name: "index_interviews_on_email"
   end
 
@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 20161008035510) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "day",             limit: 15
-    t.time     "lesson_time"
+    t.string   "lesson_time"
     t.string   "lesson_type"
-    t.time     "lesson_duration"
+    t.string   "lesson_duration"
     t.string   "lesson_cost"
     t.index ["email"], name: "index_lessons_on_email"
   end
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20161008035510) do
     t.datetime "updated_at",                            null: false
     t.string   "email",                      limit: 50
     t.string   "preferred_day",              limit: 15
-    t.time     "preferred_time"
+    t.string   "preferred_time"
     t.string   "instrument",                 limit: 50
     t.string   "preferred_teacher_language", limit: 30
     t.string   "preferred_teacher_gender",   limit: 10
