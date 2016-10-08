@@ -12,15 +12,17 @@
         <% if logged_in? %>
           <li><%= link_to "Timetable", timetable_path %></li>
           
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Free Play Room <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Book Session", book_session_path %></li>
-              <li><%= link_to "Current Sessions", current_sessions_path %></li>
-            </ul>
-          </li>
+          <% if !@user.teacher? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Free Play Room <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Book Session", book_session_path %></li>
+                <li><%= link_to "Current Sessions", current_sessions_path %></li>
+              </ul>
+            </li>
+          <% end %>
           
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -38,6 +40,9 @@
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "My Timetable", '#' %></li>
+              <% if @user.teacher? %>
+                <li><%= link_to "My Availability", '#' %></li>
+              <% end %>
               <li><%= link_to "Edit Personal Details", edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
