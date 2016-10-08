@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008025818) do
+ActiveRecord::Schema.define(version: 20161008032542) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -33,8 +33,15 @@ ActiveRecord::Schema.define(version: 20161008025818) do
   end
 
   create_table "preferences", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "email",                      limit: 50
+    t.string   "preferred_day",              limit: 15
+    t.time     "preferred_time"
+    t.string   "instrument",                 limit: 50
+    t.string   "preferred_teacher_language", limit: 30
+    t.string   "preferred_teacher_gender",   limit: 10
+    t.index ["email"], name: "index_preferences_on_email"
   end
 
   create_table "skills", force: :cascade do |t|
