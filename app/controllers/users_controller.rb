@@ -26,8 +26,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to Mika Music!"
-      redirect_to @user
+      if @user.teacher
+        flash[:success] = "Welcome to Mika Music! Add some Availabilities to get Started!"
+        redirect_to(my_availabilities_path)
+      else
+        flash[:success] = "Welcome to Mika Music!"
+        redirect_to @user
+      end
     else
       render 'new'
     end
