@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   #Routes for each page. Current Root is the home page
   root 'static_pages#home'
   
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
   get  '/students',  to: 'users#index'
   get  '/teachers',  to: 'users#index_teacher'
   
+  
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
@@ -22,6 +27,8 @@ Rails.application.routes.draw do
   
   get  '/new_availability',  to: 'availabilities#new'
   get  '/my_availabilities',  to: 'availabilities#index'
+  
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   
   resources :users
   resources :free_play_rooms do

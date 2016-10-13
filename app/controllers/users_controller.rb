@@ -65,6 +65,8 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
+
+  
   private
   #Private functions for the users controller. 
   

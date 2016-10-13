@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008104846) do
+ActiveRecord::Schema.define(version: 20161013052233) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at",            null: false
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20161008104846) do
     t.string   "parent_moblie"
     t.boolean  "user_recieve_emails"
     t.boolean  "parent_recieve_emails"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
