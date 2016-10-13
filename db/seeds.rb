@@ -17,7 +17,6 @@ User.create!(name:  "Mika",
               password:              "password",
               password_confirmation: "password",
               admin: true)
-             
 User.create!(name:  "Mr",
                email: "teacher1@teacher.org",
                last_name: "Teacher",
@@ -27,7 +26,6 @@ User.create!(name:  "Mr",
                password:              "password",
                password_confirmation: "password", 
                teacher: true)
-               
 User.create!(name:  "Ms",
                email: "teacher2@teacher.org",
                last_name: "Teacher",
@@ -37,7 +35,6 @@ User.create!(name:  "Ms",
                password:              "password",
                password_confirmation: "password",
                teacher: true)
-
 20.times do |n|
   name  = Faker::Name.first_name
   last_name = Faker::Name.last_name

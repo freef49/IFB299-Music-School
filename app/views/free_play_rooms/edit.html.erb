@@ -1,0 +1,24 @@
+<% provide(:title, "Edit Booking") %>
+<h1>Edit Booking</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
+  <%= form_for(@free_play_rooms) do |f| %>
+  
+  <%= f.hidden_field :user_email, :value => current_user.email, class: 'form-control'%>
+  <%= f.hidden_field :user_id, :value => current_user.id, class: 'form-control' %>
+  
+  <%= f.label :date %>
+  <%= f.date_field :date, class: 'form-control', placeholder: "DD/MM/YYYY"%>
+  
+  <%= f.label :time %>
+  <%= f.text_field :time, class: 'form-control', placeholder: "HH:MM"%>
+  
+  <%= f.label :duration %>
+  <%= f.text_field :duration, class: 'form-control', placeholder: "H"%>
+  
+  <%= f.submit "Update Booking", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>

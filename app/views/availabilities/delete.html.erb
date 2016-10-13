@@ -1,0 +1,12 @@
+<% provide(:title, "Delete Availability") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
+  <%= form_for(@availabilities, :method => 'delete') do |f| %>
+  <h1> Are you sure you wish to perminently delete this Availability? </h1>
+  <%= f.submit "Delete Availability", class: "btn btn-primary" %>
+  <% end %>
+  
+  </div>
+</div>

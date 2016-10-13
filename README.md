@@ -11,6 +11,7 @@ https://docs.google.com/document/d/13GtgIFlC-mK1TnwiQaYQo_29Fug1yfPcqBq6GHSP12I/
 
 Website hosted at https://ifb299-mikamusic-fm.herokuapp.com/
 
+<<<<<<< HEAD
 
 
 ## Pushing repository
@@ -58,4 +59,7 @@ Finally, at the end of each task. Record Hours spent and post hours into Slack (
 $ rails server -b $IP -p $PORT
 
 >>>>>>> master
+=======
+If deployment website is not working, it needs to have its database migrated!
+>>>>>>> 632d9ea761fa5fa4c5a6621517e2c3bcf1ca355d
 

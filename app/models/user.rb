@@ -1,4 +1,14 @@
 class User < ApplicationRecord
+  
+  #Relationships
+  has_one :skill
+  has_one :preference
+  has_many :lessons
+  has_many :interviews
+  has_many :free_play_rooms
+  has_many :availabilities
+  
+  
   attr_accessor :remember_token
   #Before saving, convert email to lower case. This will save many problems.
   before_save { self.email = email.downcase }
