@@ -72,7 +72,7 @@ class UsersController < ApplicationController
   
     def user_params
       params.require(:user).permit(:name, :last_name, :dob, :email, :address, :gender, :password, :facebook_ID,
-                                   :password_confirmation, :teacher, :parent_name, :parent_email, :parent_mobile,
+                                   :password_confirmation, :teacher, :parent_name, :parent_email, :parent_moblie,
                                    :user_recieve_emails, :parent_recieve_emails, :teacher_qualifications)
     end
     
