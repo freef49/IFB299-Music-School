@@ -12,6 +12,14 @@
         <br>
         <%= @user.facebook_ID %>
         <%= @user.email %>
+        <br>
+        <%= @user.address %>
+        
+        <% if @user.user_recieve_emails == true %>
+          <p>You have elected to recieve emails</p>
+        <% else %>
+          <p>You have elected to not recieve emails</p>
+        <% end %>
       </h1>
     </section>
   </aside>

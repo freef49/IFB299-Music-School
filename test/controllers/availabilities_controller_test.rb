@@ -1,10 +1,10 @@
 require 'test_helper'
 
 class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
-  # test "should get index" do
-  #   get my_availabilities_path
-  #   assert_response :success
-  # end
+  test "should get index" do
+    get my_availabilities_path
+    assert_response :success
+  end
 
   # test "should get show" do
   #   get availabilities_show_path
