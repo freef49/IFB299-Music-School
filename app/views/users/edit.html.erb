@@ -12,6 +12,16 @@
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
+      
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control'%>
+      
+      <br>
+      <%= f.label :user_recieve_emails, class: "checkbox inline" do %>
+      <span>Would you like to recieve emails from Mika Music?</span>
+      <%= f.check_box :user_recieve_emails %> 
+      <% end %>
+    <br>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
