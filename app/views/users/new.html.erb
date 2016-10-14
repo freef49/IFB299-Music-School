@@ -25,6 +25,10 @@
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control', placeholder: "example@gmail.com"  %>
     
+    <%= f.label :address %>
+    <%= f.email_field :address, class: 'form-control', placeholder: "58 Parklands Dr, Southport QLD 4215"  %>
+    
+    
     <br>  
     <span><b>Male</b><%= f.radio_button :gender, "Male"  %></span>
     <span><b>Female</b><%= f.radio_button :gender, "Female" %></span>
@@ -43,10 +47,25 @@
     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Secret!"  %>
     <br><br>
     
+    <%= f.label :parent_name %>
+    <%= f.email_field :parent_name, class: 'form-control', placeholder: "Sally"  %>
+    
+    <%= f.label :parent_moblie %>
+    <%= f.email_field :parent_mobile, class: 'form-control', placeholder: "0448 499 XXX"  %>
+    
+    <%= f.label :parent_email %>
+    <%= f.email_field :parent_email, class: 'form-control', placeholder: "Sally@parent.com"  %>
+    
     <br><br>    
     <%= f.label :teacher_qualifications, "Qualifications?" %>
     <%= f.text_field :teacher_qualifications, class: 'form-control', placeholder: "Graduated from University" %>
     <br><br>
+    
+    <%= f.label :user_recieve_emails, class: "checkbox inline" do %>
+    <%= f.check_box :user_recieve_emails %> <span>Would you like to recieve emails from Mika Music?</span>
+    
+    <%= f.label :parent_recieve_emails, class: "checkbox inline" do %>
+    <%= f.check_box :parent_recieve_emails %> <span>Would your elected parent like to recieve emails from Mika Music?</span>
         
     <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
