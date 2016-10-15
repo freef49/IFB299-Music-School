@@ -12,6 +12,13 @@ class InterviewsController < ApplicationController
   end
   
   def create
+    @interviews = Interview.new(interview_params)
+    if @interviews.save
+      flash[:success] = "Interview Booked!"
+      redirect_to(my_interviews_path)
+    else
+      render('new')
+    end
   end
 
   def edit
@@ -19,6 +26,14 @@ class InterviewsController < ApplicationController
   end
   
   def update
+    @interviews = Interview.find(params[:id])
+    @interviews = Interview.update_attributes(interview_params)
+    if @interviews.save
+      flash[:success] = "Interview Updated!"
+      redirect_to(my_interviews_path)
+    else
+      render('new')
+    end
   end
 
   def delete
@@ -26,6 +41,10 @@ class InterviewsController < ApplicationController
   end
   
   def destroy 
+    @interviews = Interview.find(params[:id])
+    @interviews.destroy
+    flash[:success] = "Interview deleted"
+    redirect_to(my_interviews_path)
   end
   
   private
