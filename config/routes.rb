@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'preferences/index'
-
-  get 'preferences/show'
-
-  get 'preferences/new'
-
-  get 'preferences/edit'
-
-  get 'preferences/delete'
 
   #Routes for each page. Current Root is the home page
   root 'static_pages#home'
@@ -37,6 +28,10 @@ Rails.application.routes.draw do
   
   get  '/new_interview',  to: 'interviews#new'
   get  '/my_interviews',  to: 'interviews#index'
+  
+  get '/my_preferences',  to: 'preferences#show'
+  get 'preferences/new'
+  get 'preferences/edit'
   
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
