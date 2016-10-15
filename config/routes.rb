@@ -29,8 +29,8 @@ Rails.application.routes.draw do
   get  '/new_interview',  to: 'interviews#new'
   get  '/my_interviews',  to: 'interviews#index'
   
-  get '/my_preferences',  to: 'preferences#show'
-  get 'preferences/new'
+  get '/my_preferences',  to: 'preferences#index'
+  get '/new_preference',  to: 'preferences#new'
   get 'preferences/edit'
   
   resources :password_resets,     only: [:new, :create, :edit, :update]
