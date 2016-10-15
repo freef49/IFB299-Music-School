@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'preferences/index'
+
+  get 'preferences/show'
+
+  get 'preferences/new'
+
+  get 'preferences/edit'
+
+  get 'preferences/delete'
+
   #Routes for each page. Current Root is the home page
   root 'static_pages#home'
   
