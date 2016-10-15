@@ -27,7 +27,7 @@ class InterviewsController < ApplicationController
   
   def update
     @interviews = Interview.find(params[:id])
-    @interviews = Interview.update_attributes(interview_params)
+    @interviews.update_attributes(interview_params)
     if @interviews.save
       flash[:success] = "Interview Updated!"
       redirect_to(my_interviews_path)
