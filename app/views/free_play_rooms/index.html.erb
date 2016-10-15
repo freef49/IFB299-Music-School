@@ -1,9 +1,11 @@
 <% provide(:title, "Free Play Room") %>
 <h1>Current Sessions in the Free Play Room</h1>
-<h3><%= link_to "Add New Booking", book_session_path %></h3>
+
+<a href="<%= book_session_path %>" class="btn btn-success" role="button">Add Booking</a>
 <br><br>
 
-<table class="listing" sumarry="Free Play Room Bookings">
+<table class="table table-hover" sumarry="Free Play Room Bookings">
+  <thead>
   <tr class="header">
   <th>User Email</th>
   <th>Date</th>
@@ -11,7 +13,9 @@
   <th>Duration</th>
   <th></th>
   </tr>
+  </thead>
   
+  <tbody>
   <% @free_play_rooms.each do |free_play_room| %>
   <tr>
     <td><%= free_play_room.user_email%></td>
@@ -20,11 +24,12 @@
     <td><%= free_play_room.duration%></td>
     <td>
       <% if free_play_room.user_email == current_user.email %>
-      <%= link_to("Edit", edit_free_play_room_path(free_play_room), :class => 'action edit') %>
-      <%= link_to("Delete", delete_free_play_room_path(free_play_room), :class => 'action delete') %>
+      <a href="<%= edit_free_play_room_path(free_play_room) %>" class="btn btn-info" role="button">Edit</a>
+      <a href="<%= delete_free_play_room_path(free_play_room) %>" class="btn btn-danger" role="button">Delete</a>
       <% end %>
     </td>
   </tr>
   <% end %>
+  </tbody>
 </table>
 

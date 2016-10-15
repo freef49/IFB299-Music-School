@@ -13,7 +13,7 @@
   <%= f.select :day, options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]), class: 'form-control'%>
   
   <%= f.label :time %>
-  <%= f.number_field :time, in: 7.00..20.0, step: 1, class: 'form-control', placeholder: "HH"%>
+  <%= f.number_field :time, in: 7.00..20.0, step: 1, class: 'form-control', placeholder: "24 Hours"%>
   
   <%= f.label :duration %>
   <%= f.number_field :duration, in: 1.00..10.0, step: 0.5, class: 'form-control', placeholder: "H"%>
