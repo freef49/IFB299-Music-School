@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'interviews/index'
+
+  get 'interviews/show'
+
+  get 'interviews/new'
+
+  get 'interviews/edit'
+
+  get 'interviews/delete'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
