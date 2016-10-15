@@ -10,3 +10,4 @@ If deployment website is not working, it needs to have its database migrated!
 
 Should fix day dropdown box in the availabilities new and edit form.
 Need to additionally fix drop down box in interviews forms.
+Same as above for preferences forms.
