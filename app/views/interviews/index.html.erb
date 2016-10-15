@@ -1,2 +1,34 @@
-<h1>Interviews#index</h1>
-<p>Find me in app/views/interviews/index.html.erb</p>
+<% provide(:title, "My Interviews") %>
+<h1>Your Current Interviews</h1>
+
+<a href="<%= new_interview_path %>" class="btn btn-success" role="button">Add Interview</a>
+<br><br>
+
+<table class="table table-hover" sumarry="Free Play Room Bookings">
+  <thead>
+  <tr class="header">
+  <th>Teacher Email</th>  
+  <th>Date</th>
+  <th>Time</th>
+  <th>Duration</th>
+  <th></th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <% @interviews.each do |interview| %>
+  <% if current_user.admin? %>
+  <tr>
+    <td><%= interview.teacher_email%></td>
+    <td><%= interview.date%></td>
+    <td><%= interview.time%></td>
+    <td><%= interview.duration%></td>
+    <td>
+      <a href="<%= edit_interview_path(interview) %>" class="btn btn-info" role="button">Edit</a>
+      <a href="<%= delete_interview_path(interview) %>" class="btn btn-danger" role="button">Delete</a>
+    </td>
+      <% end %>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

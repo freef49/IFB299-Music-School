@@ -50,6 +50,6 @@ class InterviewsController < ApplicationController
   private
   
   def interview_params
-    params.require(:interview).permit(:user_email, :teacher_email, :date, :time, :duration)
+    params.require(:interview).permit(:user_email, :user_id, :teacher_email, :date, :time, :duration)
   end
 end
