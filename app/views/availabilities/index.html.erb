@@ -3,14 +3,17 @@
 <h3><%= link_to "Add New Availability", new_availability_path %></h3>
 <br><br>
 
-<table class="listing" sumarry="Free Play Room Bookings">
+<table class="table table-hover" sumarry="Free Play Room Bookings">
+  <thead>
   <tr class="header">
   <th>Day</th>
   <th>Time</th>
   <th>Duration</th>
   <th></th>
   </tr>
+  </thead>
   
+  <tbody>
   <% @availabilities.each do |availability| %>
   <% if availability.user_email == current_user.email %>
   <tr>
@@ -24,4 +27,5 @@
       <% end %>
   </tr>
   <% end %>
+  </tbody>
 </table>
