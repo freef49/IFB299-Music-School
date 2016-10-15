@@ -10,7 +10,7 @@
   <%= f.hidden_field :user_id, :value => current_user.id, class: 'form-control' %>
   
   <%= f.label :teacher_email %>
-  <%= f.email_field :teacher_email, class: 'form-control', placeholder: "teacher1@teacher.org"%>
+  <%= f.collection_select :teacher_email, User.where(:teacher => true), :email, :email, multple: false, class: 'form-control' %>
   
   <%= f.label :date %>
   <%= f.date_field :date, class: 'form-control', placeholder: "DD/MM/YYYY"%>
