@@ -30,6 +30,7 @@ class UsersController < ApplicationController
         flash[:success] = "Welcome to Mika Music! Add some Availabilities to get Started!"
         redirect_to(my_availabilities_path)
       else
+        
         flash[:success] = "Welcome to Mika Music!"
         redirect_to @user
       end

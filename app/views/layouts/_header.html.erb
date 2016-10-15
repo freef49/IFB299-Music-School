@@ -28,6 +28,7 @@
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
               <% if !current_user.teacher? && !current_user.admin?%>
+                <li><%= link_to "My Preferences", my_preferences_path %></li>
                 <li><%= link_to "Free Play Room", current_sessions_path %></li>
               <% end %>
               <li><%= link_to "My Timetable", '#' %></li>
