@@ -1,0 +1,35 @@
+<% provide(:title, "Add Preferences") %>
+<h1>Add Preferences</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
+  <%= form_for(@preferences) do |f| %>
+  
+  <%= f.hidden_field :user_email, :value => current_user.email, class: 'form-control'%>
+  <%= f.hidden_field :user_id, :value => current_user.id, class: 'form-control' %>
+  
+  <%= f.label :preferred_day %>
+  <%= f.select :preferred_day, options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]), class: 'form-control'%>
+
+  <%= f.label :preferred_time %>
+  <%= f.text_field :preferred_time, class: 'form-control', placeholder: "HH:MM"%>
+  
+  <%= f.label :instrument %>
+  <%= f.text_field :instrument, class: 'form-control', placeholder: "Guitar"%>
+  
+  <%= f.label :preferred_teacher_language %>
+  <%= f.text_field :preferred_teacher_language, class: 'form-control', placeholder: "English"%>
+  
+  <%= f.label :male, class: 'radio-inline' %>
+  <%= f.radio_button :preferred_teacher_gender, "Male" %>
+  <%= f.label :female, class: 'radio-inline' %>
+  <%= f.radio_button :preferred_teacher_gender, "Female"%>
+  <%= f.label :no_preference, class: 'radio-inline' %>
+  <%= f.radio_button :preferred_teacher_gender, "No Preference",  :checked => true %>
+  <br><br>
+  
+  <%= f.submit "Add Preference", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>

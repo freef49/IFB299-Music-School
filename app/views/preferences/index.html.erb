@@ -1,0 +1,34 @@
+<% provide(:title, "Preferences") %>
+<h1>Preferences</h1>
+
+<a href="<%= new_preference_path %>" class="btn btn-success" role="button">Create Preference</a>
+<br><br>
+
+<table class="table table-hover" sumarry="Free Play Room Bookings">
+  <thead>
+  <tr class="header">
+  <th>Preferred Day</th>
+  <th>Preferred Time</th>
+  <th>Instrument</th>
+  <th>Preferred Teacher Language</th>
+  <th>Preferred Teacher Gender</th>
+  <th></th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <% @preferences.each do |preferences| %>
+  <tr>
+    <td><%= preferences.preferred_day %></td>
+    <td><%= preferences.preferred_time %></td>
+    <td><%= preferences.instrument %></td>
+    <td><%= preferences.preferred_teacher_language %></td>
+    <td><%= preferences.preferred_teacher_gender %></td>
+    <td>
+      <a href="<%= edit_preference_path(preferences) %>" class="btn btn-info" role="button">Edit</a>
+      <a href="<%= delete_preference_path(preferences) %>" class="btn btn-danger" role="button">Delete</a>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
