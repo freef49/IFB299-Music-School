@@ -5,7 +5,7 @@ class Availability < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   VALID_DAY_REGEX = /[A-z]+/
   VALID_TIME_REGEX = /\A^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/
-  VALID_DURATION_REGEX = /\A[0-9]{1}\.[0-9]{1}/
+  VALID_DURATION_REGEX = /\A[0-9]{1}\.?[0-9]*/
   
   validates :user_email,  presence: true, length: { maximum: 50 }, format: { with: VALID_EMAIL_REGEX }
   validates :day, presence: true, length: { maximum: 15 }, format: { with: VALID_DAY_REGEX }
