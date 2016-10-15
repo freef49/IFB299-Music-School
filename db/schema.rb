@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013052233) do
+ActiveRecord::Schema.define(version: 20161015080508) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at",            null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20161013052233) do
     t.datetime "updated_at",               null: false
     t.string   "user_email",    limit: 50
     t.string   "teacher_email", limit: 50
-    t.date     "date"
+    t.string   "date"
     t.string   "time"
     t.string   "duration"
     t.integer  "user_id"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20161013052233) do
     t.datetime "updated_at",                 null: false
     t.string   "user_email",      limit: 50
     t.string   "student_email",   limit: 50
-    t.date     "start_date"
-    t.date     "end_date"
+    t.string   "start_date"
+    t.string   "end_date"
     t.string   "day",             limit: 15
     t.string   "lesson_time"
     t.string   "lesson_type"
