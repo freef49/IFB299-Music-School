@@ -1,5 +1,5 @@
 <% provide(:title, "Book Freem Play Room") %>
-<h1>Book Free Play Room Session</h1>
+<h1>New Free Play Room Session</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -16,7 +16,7 @@
   <%= f.text_field :time, class: 'form-control', placeholder: "HH:MM"%>
   
   <%= f.label :duration %>
-  <%= f.text_field :duration, class: 'form-control', placeholder: "H"%>
+  <%= f.number_field :duration, in: 1.00..10.0, step: 0.5, class: 'form-control', placeholder: "H"%>
   
   <%= f.submit "Create Booking", class: "btn btn-primary" %>
   <% end %>
