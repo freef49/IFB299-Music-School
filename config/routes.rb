@@ -31,7 +31,6 @@ Rails.application.routes.draw do
   
   get '/my_preferences',  to: 'preferences#index'
   get '/new_preference',  to: 'preferences#new'
-  get 'preferences/edit'
   
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
@@ -49,6 +48,12 @@ Rails.application.routes.draw do
   end
   
   resources :interviews do
+    member do
+      get :delete
+    end
+  end
+  
+  resources :preferences do
     member do
       get :delete
     end

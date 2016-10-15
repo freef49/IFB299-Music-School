@@ -2,7 +2,7 @@ class User < ApplicationRecord
   
   #Relationships
   has_one :skill
-  has_one :preference
+  has_many :preferences
   has_many :lessons
   has_many :interviews
   has_many :free_play_rooms
