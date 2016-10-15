@@ -1,7 +1,7 @@
 <% provide(:title, "My Availabilities") %>
 <h1>Your Current Availabilities</h1>
 
-<a href="<%= new_availability_path %>" class="btn btn-info" role="button">Add Availability</a>
+<a href="<%= new_availability_path %>" class="btn btn-success" role="button">Add Availability</a>
 <br><br>
 
 <table class="table table-hover" sumarry="Free Play Room Bookings">
@@ -22,8 +22,8 @@
     <td><%= availability.time%></td>
     <td><%= availability.duration%></td>
     <td>
-      <%= link_to("Edit", edit_availability_path(availability), :class => 'action edit') %>
-      <%= link_to("Delete", delete_availability_path(availability), :class => 'action delete') %>
+      <a href="<%= edit_availability_path(availability) %>" class="btn btn-info" role="button">Edit</a>
+      <a href="<%= delete_availability_path(availability) %>" class="btn btn-danger" role="button">Delete</a>
     </td>
       <% end %>
   </tr>
