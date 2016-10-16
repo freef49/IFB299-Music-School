@@ -50,6 +50,22 @@ Interview.create!(user_email: user.email,
   password = "password"
   user_recieve_emails = Faker::Boolean.boolean
   teacher = true
+  
+  dayDecider = Faker::Number.between(1, 5)
+  if dayDecider == 1
+    day = "Monday"
+  elsif dayDecider == 2
+    day = "Tuesday"
+  elsif dayDecider == 3
+    day = "Wednesday"
+  elsif dayDecider == 4
+    day = "Thursday"
+  else
+    day = "Friday"
+  end
+  time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
+  duration = Faker::Number.between(1, 5)
+  
   user = User.create!(name:  name,
                last_name: last_name,
                email: email,
@@ -62,6 +78,14 @@ Interview.create!(user_email: user.email,
                password:              password,
                password_confirmation: password,
                teacher: teacher)
+               
+  2.times do |a|             
+    Availability.create!(user_email: user.email,
+                      user_id: user.id, 
+                      day: day, 
+                      time: time,
+                      duration: duration)
+  end
 end
                
 20.times do |n|
