@@ -14,3 +14,10 @@ Same as above for preferences forms.
 Finished all of my components (Brad)
 Seed data completed
 
+$ rails test
+$ git push heroku
+$ heroku pg:reset DATABASE
+$ heroku run rails db:migrate
+$ heroku run rails db:seed
+$ heroku restart
+
