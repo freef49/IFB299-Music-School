@@ -192,7 +192,7 @@ end
     elsif genderDecider == 2
       preferred_teacher_gender = "Female"
     else
-      preferred_teacher_gender = "No Preference"
+      preferred_teacher_gender = "None"
     end
 
     Preference.create!(user_email: user.email,
