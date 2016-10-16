@@ -8,9 +8,8 @@
 
 # Seeds for the user database. 
 # Currently seeds one admin (Admin has two interviews)
-#
-#
 # Seeds 5 completely random teachers (Each teacher has a random number of availabilities and skills)
+# Seeds 20 completely random students (Each student has a random number of preferences and free play room bookings)
 
 instrumentsAvailable = ["Guitar", "Drums", "Bass", "Claranet", "Vocal"]
 languagesAvailable = ["English", "Spanish", "Mandarin", "French", "Russian"]
