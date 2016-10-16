@@ -1,3 +1,29 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// home page
+
+.home-instrument-image{
+    width: 10rem;
+}
+
+// images
+#guitar-icon{
+    background-image: url('guitar-icon.png');
+}
+#percussion-icon{
+    background-image: url('../images/percussion-icon.png');
+}
+#piano-icon{
+    background-image: url('../images/piano-icon.png');
+}
+#saxophone-icon{
+    background-image: url('../images/saxophone-icon.png');
+}
+#trumpet-icon{
+    background-image: url('../images/trumpet-icon.png');
+}
+#violin-icon{
+    background-image: url('../images/violin-icon.png');
+}
