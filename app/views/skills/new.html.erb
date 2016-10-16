@@ -1,2 +1,28 @@
-<h1>Skills#new</h1>
-<p>Find me in app/views/skills/new.html.erb</p>
+<% provide(:title, "Add Skill") %>
+<h1>Add Skill</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
+  <%= form_for(@skills) do |f| %>
+  
+  <%= f.hidden_field :user_email, :value => current_user.email, class: 'form-control'%>
+  <%= f.hidden_field :user_id, :value => current_user.id, class: 'form-control' %>
+ 
+  <%= f.label :instrument %>
+  <%= f.text_field :instrument, class: 'form-control', placeholder: "Guitar"%>
+  
+  <%= f.label :instrument_skill %>
+  <%= f.number_field :instrument_skill, in: 1.00..5, step: 0.5, class: 'form-control', placeholder: "Out of 5"%>
+  
+  <%= f.label :language %>
+  <%= f.text_field :language, class: 'form-control', placeholder: "English"%>
+  
+  <%= f.label :language_skill %>
+  <%= f.number_field :language_skill, in: 1.00..5, step: 0.5, class: 'form-control', placeholder: "Out of 5"%>
+  
+  
+  <%= f.submit "Add Skill", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>
