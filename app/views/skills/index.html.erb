@@ -1,2 +1,32 @@
-<h1>Skills#index</h1>
-<p>Find me in app/views/skills/index.html.erb</p>
+<% provide(:title, "Skills") %>
+<h1>Skills</h1>
+
+<a href="<%= new_skill_path %>" class="btn btn-success" role="button">Add Skill</a>
+<br><br>
+
+<table class="table table-hover" sumarry="Free Play Room Bookings">
+  <thead>
+  <tr class="header">
+  <th>Instrument</th>
+  <th>Instrument skill level (1-5)</th>
+  <th>Language</th>
+  <th>Language Skill level (1-5)</th>
+  <th></th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <% @skills.each do |skill| %>
+  <tr>
+    <td><%= skill.instrument %></td>
+    <td><%= skill.instrument_skill %></td>
+    <td><%= skill.language %></td>
+    <td><%= skill.language_skill %></td>
+    <td>
+      <a href="<%= edit_skill_path(skills) %>" class="btn btn-info" role="button">Edit</a>
+      <a href="<%= delete_skill_path(skills) %>" class="btn btn-danger" role="button">Delete</a>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
