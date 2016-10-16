@@ -10,15 +10,15 @@
   <%= f.hidden_field :user_id, :value => current_user.id, class: 'form-control' %>
   
   <%= f.label :day %>
-  <%= f.text_field :day, class: 'form-control', placeholder: "Friday"%>
+  <%= f.select :day, options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]), class: 'form-control'%>
   
   <%= f.label :time %>
   <%= f.text_field :time, class: 'form-control', placeholder: "HH:MM"%>
   
   <%= f.label :duration %>
-  <%= f.text_field :duration, class: 'form-control', placeholder: "H"%>
+  <%= f.number_field :duration, in: 1.00..9.5, step: 0.5, class: 'form-control', placeholder: "H"%>
   
-  <%= f.submit "Add Availability", class: "btn btn-primary" %>
+  <%= f.submit "Add Availability", class: "btn btn-info" %>
   <% end %>
   </div>
 </div>

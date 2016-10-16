@@ -30,6 +30,7 @@ class UsersController < ApplicationController
         flash[:success] = "Welcome to Mika Music! Add some Availabilities to get Started!"
         redirect_to(my_availabilities_path)
       else
+        
         flash[:success] = "Welcome to Mika Music!"
         redirect_to @user
       end
@@ -65,12 +66,15 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
+
+  
   private
   #Private functions for the users controller. 
   
     def user_params
-      params.require(:user).permit(:name, :last_name, :dob, :email, :gender, :password, :facebook_ID,
-                                   :password_confirmation, :teacher, :parent_name, :parent_email, :teacher_qualifications)
+      params.require(:user).permit(:name, :last_name, :dob, :email, :address, :gender, :password, :facebook_ID,
+                                   :password_confirmation, :teacher, :parent_name, :parent_email, :parent_moblie,
+                                   :user_recieve_emails, :parent_recieve_emails, :teacher_qualifications)
     end
     
     def logged_in_user

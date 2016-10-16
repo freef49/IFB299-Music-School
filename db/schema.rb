@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008104846) do
+ActiveRecord::Schema.define(version: 20161016010019) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "created_at",            null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20161008104846) do
     t.datetime "updated_at",               null: false
     t.string   "user_email",    limit: 50
     t.string   "teacher_email", limit: 50
-    t.date     "date"
+    t.string   "date"
     t.string   "time"
     t.string   "duration"
     t.integer  "user_id"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20161008104846) do
     t.datetime "updated_at",                 null: false
     t.string   "user_email",      limit: 50
     t.string   "student_email",   limit: 50
-    t.date     "start_date"
-    t.date     "end_date"
+    t.string   "start_date"
+    t.string   "end_date"
     t.string   "day",             limit: 15
     t.string   "lesson_time"
     t.string   "lesson_type"
@@ -76,17 +76,13 @@ ActiveRecord::Schema.define(version: 20161008104846) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "user_email",          limit: 50
-    t.string   "instrument_1"
-    t.string   "instrument_1_skils"
-    t.string   "instrument_2"
-    t.string   "instrument_2_skills"
-    t.string   "language_1"
-    t.string   "language_1_skils"
-    t.string   "language_2"
-    t.string   "language_2_skills"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "user_email",       limit: 50
+    t.string   "instrument"
+    t.string   "instrument_skill"
+    t.string   "language"
+    t.string   "language_skill"
     t.integer  "user_id"
     t.index ["user_email"], name: "index_skills_on_user_email"
   end
@@ -111,6 +107,8 @@ ActiveRecord::Schema.define(version: 20161008104846) do
     t.string   "parent_moblie"
     t.boolean  "user_recieve_emails"
     t.boolean  "parent_recieve_emails"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -7,10 +7,12 @@
     
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
+    <br>
     
-    <%= f.label :teacher %>
-    <span>Are you applying to become a teacher here?</span>
-    <%= f.check_box :teacher %>
+    <%= f.label :teacher, class: "checkbox inline" do %>
+      <span>Are you applying to become a teacher here?</span>
+      <%= f.check_box :teacher %>
+    <% end %>
     <br>
     
     <%= f.label :name %>
@@ -25,13 +27,16 @@
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control', placeholder: "example@gmail.com"  %>
     
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control', placeholder: "58 Parklands Dr, Southport QLD 4215"  %>
+    
+    
     <br>  
     <span><b>Male</b><%= f.radio_button :gender, "Male"  %></span>
     <span><b>Female</b><%= f.radio_button :gender, "Female" %></span>
     <span><b>Other</b><%= f.radio_button :gender, "Other", :checked => true %></span>
     <br>
     
-<br><br>
 
     <%= f.label :Facebook_ID %>
     <%= f.text_field :facebook_ID, class: 'form-control', placeholder: "www.facebook.com/Mika_Williams_Music_School" %>
@@ -43,12 +48,34 @@
     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Secret!"  %>
     <br><br>
     
+    <%= f.label :parent_name %>
+    <%= f.text_field :parent_name, class: 'form-control', placeholder: "Sally"  %>
+    
+    <%= f.label :parent_moblie %>
+    <%= f.text_field :parent_moblie, class: 'form-control', placeholder: "0448 499 XXX"  %>
+    
+    <%= f.label :parent_email %>
+    <%= f.email_field :parent_email, class: 'form-control', placeholder: "Sally@parent.com"  %>
+    
     <br><br>    
     <%= f.label :teacher_qualifications, "Qualifications?" %>
     <%= f.text_field :teacher_qualifications, class: 'form-control', placeholder: "Graduated from University" %>
     <br><br>
+    
+    <%= f.label :user_recieve_emails, class: "checkbox inline" do %>
+      <span>Would you like to recieve emails from Mika Music?</span>
+      <%= f.check_box :user_recieve_emails %> 
+    <% end %>
+    <br><br>
+    
+    <%= f.label :parent_recieve_emails, class: "checkbox inline" do %>
+      <span>Would your elected parent like to recieve emails from Mika Music?</span>
+      <%= f.check_box :parent_recieve_emails %> 
+    <% end %>
+    <br>
         
     <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
+    
   </div>
 </div>
