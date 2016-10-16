@@ -34,6 +34,8 @@ Interview.create!(user_email: user.email,
                       duration: "1.5")
 
 5.times do |n|
+  
+  # Variables for the user table of teacher
   name  = Faker::Name.first_name
   last_name = Faker::Name.last_name
   dob = "#{Faker::Number.between(1, 30)}/#{Faker::Number.between(1, 12)}/#{Faker::Number.between(1950, 1995)}"
@@ -51,6 +53,7 @@ Interview.create!(user_email: user.email,
   user_recieve_emails = Faker::Boolean.boolean
   teacher = true
   
+  # Variables for the Availability table of teacher
   dayDecider = Faker::Number.between(1, 5)
   if dayDecider == 1
     day = "Monday"
@@ -66,6 +69,35 @@ Interview.create!(user_email: user.email,
   time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
   duration = Faker::Number.between(1, 5)
   
+  # Variables for the Skills table of teacher
+  instrumentDecider = Faker::Number.between(1, 5)
+  if instrumentDecider == 1
+    instrument = "Piano"
+  elsif instrumentDecider == 2
+    instrument = "Guitar"
+  elsif instrumentDecider == 3
+    instrument = "Bass"
+  elsif instrumentDecider == 4
+    instrument = "Claranet"
+  else
+    instrument = "Drums"
+  end
+  instrument_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
+  languageDecider = Faker::Number.between(1, 5)
+  if languageDecider == 1
+    language = "English"
+  elsif languageDecider == 2
+    language = "Spanish"
+  elsif languageDecider == 3
+    language = "French"
+  elsif languageDecider == 4
+    language = "Mandarin"
+  else
+    language = "Latin"
+  end
+  language_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
+  
+  # Assignment
   user = User.create!(name:  name,
                last_name: last_name,
                email: email,
@@ -79,12 +111,21 @@ Interview.create!(user_email: user.email,
                password_confirmation: password,
                teacher: teacher)
                
-  2.times do |a|             
+  4.times do |a|             
     Availability.create!(user_email: user.email,
                       user_id: user.id, 
                       day: day, 
                       time: time,
                       duration: duration)
+  end
+  
+  2.times do |a|             
+    Skill.create!(user_email: user.email,
+                      user_id: user.id, 
+                      instrument: instrument, 
+                      instrument_skill: instrument_skill,
+                      language: day, 
+                      language_skill: language_skill)
   end
 end
                
