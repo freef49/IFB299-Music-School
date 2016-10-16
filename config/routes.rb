@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'skills/index'
-
-  get 'skills/show'
-
-  get 'skills/new'
-
-  get 'skills/edit'
-
-  get 'skills/delete'
-
   #Routes for each page. Current Root is the home page
   root 'static_pages#home'
   
@@ -42,6 +32,10 @@ Rails.application.routes.draw do
   get '/my_preferences',  to: 'preferences#index'
   get '/new_preference',  to: 'preferences#new'
   
+  get '/my_skills',       to: 'skills#index'
+  get '/new_skill',       to: 'skills#new'
+
+  
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
   resources :users
@@ -64,6 +58,12 @@ Rails.application.routes.draw do
   end
   
   resources :preferences do
+    member do
+      get :delete
+    end
+  end
+  
+  resources :skills do
     member do
       get :delete
     end
