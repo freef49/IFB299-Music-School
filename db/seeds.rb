@@ -18,6 +18,7 @@ user = User.create!(name:  "Mika",
               address: "22 Queen St, Brisbane, QLD, 4000",
               password:              "password",
               password_confirmation: "password",
+              teacher_qualifications: "Graduate of Drama studies and Bachelor in Arts",
               admin: true)
 
 Interview.create!(user_email: user.email,
@@ -52,50 +53,7 @@ Interview.create!(user_email: user.email,
   password = "password"
   user_recieve_emails = Faker::Boolean.boolean
   teacher = true
-  
-  # Variables for the Availability table of teacher
-  dayDecider = Faker::Number.between(1, 5)
-  if dayDecider == 1
-    day = "Monday"
-  elsif dayDecider == 2
-    day = "Tuesday"
-  elsif dayDecider == 3
-    day = "Wednesday"
-  elsif dayDecider == 4
-    day = "Thursday"
-  else
-    day = "Friday"
-  end
-  time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
-  duration = Faker::Number.between(1, 5)
-  
-  # Variables for the Skills table of teacher
-  instrumentDecider = Faker::Number.between(1, 5)
-  if instrumentDecider == 1
-    instrument = "Piano"
-  elsif instrumentDecider == 2
-    instrument = "Guitar"
-  elsif instrumentDecider == 3
-    instrument = "Bass"
-  elsif instrumentDecider == 4
-    instrument = "Claranet"
-  else
-    instrument = "Drums"
-  end
-  instrument_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
-  languageDecider = Faker::Number.between(1, 5)
-  if languageDecider == 1
-    language = "English"
-  elsif languageDecider == 2
-    language = "Spanish"
-  elsif languageDecider == 3
-    language = "French"
-  elsif languageDecider == 4
-    language = "Mandarin"
-  else
-    language = "Latin"
-  end
-  language_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
+  day = "Monday"
   
   # How many availabilities or skills does each teacher have?
   numAvailabilities = Faker::Number.between(1, 4)
@@ -115,7 +73,23 @@ Interview.create!(user_email: user.email,
                password_confirmation: password,
                teacher: teacher)
                
-  numAvailabilities.times do |a|             
+  numAvailabilities.times do |a|
+    # Variables for the Availability table of teacher
+    dayDecider = Faker::Number.between(1, 5)
+    if dayDecider == 1
+      day = "Monday"
+    elsif dayDecider == 2
+      day = "Tuesday"
+    elsif dayDecider == 3
+      day = "Wednesday"
+    elsif dayDecider == 4
+      day = "Thursday"
+    else
+      day = "Friday"
+    end
+    time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
+    duration = Faker::Number.between(1, 5)
+  
     Availability.create!(user_email: user.email,
                       user_id: user.id, 
                       day: day, 
@@ -123,12 +97,40 @@ Interview.create!(user_email: user.email,
                       duration: duration)
   end
   
-  numSkills.times do |a|             
+  numSkills.times do |b|
+     # Variables for the Skills table of teacher
+    instrumentDecider = Faker::Number.between(1, 5)
+    if instrumentDecider == 1
+      instrument = "Piano"
+    elsif instrumentDecider == 2
+     instrument = "Guitar"
+    elsif instrumentDecider == 3
+      instrument = "Bass"
+    elsif instrumentDecider == 4
+      instrument = "Claranet"
+    else
+      instrument = "Drums"
+    end
+    instrument_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
+    languageDecider = Faker::Number.between(1, 5)
+    if languageDecider == 1
+      language = "English"
+    elsif languageDecider == 2
+      language = "Spanish"
+    elsif languageDecider == 3
+      language = "French"
+    elsif languageDecider == 4
+      language = "Mandarin"
+    else
+      language = "Latin"
+    end
+    language_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
+  
     Skill.create!(user_email: user.email,
                       user_id: user.id, 
                       instrument: instrument, 
                       instrument_skill: instrument_skill,
-                      language: day, 
+                      language: language, 
                       language_skill: language_skill)
   end
 end
