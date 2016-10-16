@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Seeds for the user database. 
-# Currently seeds one admin, two teachers and 20 students. 
+# Currently seeds one admin (Admin has two interviews)
+#
+#
+# Seeds 5 completely random teachers (Each teacher has a random number of availabilities and skills)
 
 user = User.create!(name:  "Mika",
               last_name: "Williams",
@@ -53,7 +56,8 @@ Interview.create!(user_email: user.email,
   password = "password"
   user_recieve_emails = Faker::Boolean.boolean
   teacher = true
-  day = "Monday"
+  admin = false
+  day = "" #Needed to be predefined for some reason
   
   # How many availabilities or skills does each teacher have?
   numAvailabilities = Faker::Number.between(1, 4)
@@ -71,7 +75,8 @@ Interview.create!(user_email: user.email,
                user_recieve_emails: user_recieve_emails,
                password:              password,
                password_confirmation: password,
-               teacher: teacher)
+               teacher: teacher,
+               admin: admin)
                
   numAvailabilities.times do |a|
     # Variables for the Availability table of teacher
@@ -138,15 +143,31 @@ end
 20.times do |n|
   name  = Faker::Name.first_name
   last_name = Faker::Name.last_name
-  dob = "11/11/1111"
-  gender = "Other"
-  email = "example-#{n+1}@student.org"
+  yearOfBirth = Faker::Number.between(1980, 1995)
+  dob = "#{Faker::Number.between(1, 30)}/#{Faker::Number.between(1, 12)}/#{yearOfBirth}"
+  address = "#{Faker::Address.street_address(include_secondry = false)}, QLD"
+  if Faker::Boolean.boolean
+    facebook_ID = "www.facebook.com/#{name}#{last_name}"
+  end
+  if Faker::Boolean.boolean
+    gender = "Male"
+  else
+    gender = "Female"
+  end
+  email = "student-#{n+1}@student.org"
   password = "password"
+  teacher = false
+  admin = false
+  
   User.create!(name:  name,
                email: email,
                last_name: last_name,
                dob: dob,
                gender: gender,
+               address: address,
+               facebook_ID: facebook_ID,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               teacher: teacher,
+               admin: admin)
 end
