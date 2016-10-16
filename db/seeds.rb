@@ -9,7 +9,7 @@
 # Seeds for the user database. 
 # Currently seeds one admin, two teachers and 20 students. 
 
-User.create!(name:  "Mika",
+user = User.create!(name:  "Mika",
               last_name: "Williams",
               dob: "11/09/1972",
               gender: "Other",
@@ -19,24 +19,51 @@ User.create!(name:  "Mika",
               password:              "password",
               password_confirmation: "password",
               admin: true)
-User.create!(name:  "Stevie",
-               email: "teacher1@teacher.org",
-               last_name: "Farmerton",
-               dob: "11/11/1111",
-               gender: "Other",
-               teacher_qualifications: "Finsished Tap Dancing Certificate",
-               password:              "password",
-               password_confirmation: "password", 
-               teacher: true)
-User.create!(name:  "Scottie",
-               email: "teacher2@teacher.org",
-               last_name: "Feathers",
-               dob: "11/11/1111",
-               gender: "Male",
-               teacher_qualifications: "Finsished Highschool",
-               password:              "password",
-               password_confirmation: "password",
-               teacher: true)
+
+Interview.create!(user_email: user.email,
+                      user_id: user.id, 
+                      teacher_email: "teacher1@teacher.org", 
+                      date: "12/11/2016",
+                      time: "11:30",
+                      duration: "2")
+Interview.create!(user_email: user.email,
+                      user_id: user.id, 
+                      teacher_email: "teacher4@teacher.org", 
+                      date: "13/11/2016",
+                      time: "09:30",
+                      duration: "1.5")
+
+5.times do |n|
+  name  = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  dob = "#{Faker::Number.between(1, 30)}/#{Faker::Number.between(1, 12)}/#{Faker::Number.between(1950, 1995)}"
+  isMale = Faker::Boolean.boolean
+  if isMale == false
+    gender = "Male"
+  else
+    gender = "Female"
+  end
+  address = "#{Faker::Address.street_address(include_secondry = false)}, QLD"
+  email = "teacher-#{n+1}@teacher.org"
+  facebook_ID = "www.facebook.com/#{name}#{last_name}"
+  teacher_qualifications = "Graduated #{Faker::University.name}"
+  password = "password"
+  user_recieve_emails = Faker::Boolean.boolean
+  teacher = true
+  user = User.create!(name:  name,
+               last_name: last_name,
+               email: email,
+               address: address,
+               dob: dob,
+               gender: gender,
+               facebook_ID: facebook_ID,
+               teacher_qualifications: teacher_qualifications,
+               user_recieve_emails: user_recieve_emails,
+               password:              password,
+               password_confirmation: password,
+               teacher: teacher)
+end
+               
 20.times do |n|
   name  = Faker::Name.first_name
   last_name = Faker::Name.last_name
