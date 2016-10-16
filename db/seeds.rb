@@ -141,6 +141,7 @@ Interview.create!(user_email: user.email,
 end
                
 20.times do |n|
+  # Variables for the user table for students
   name  = Faker::Name.first_name
   last_name = Faker::Name.last_name
   yearOfBirth = Faker::Number.between(1980, 2010)
@@ -175,6 +176,10 @@ end
   teacher = false
   admin = false
   
+  numFreePlayRoomSessions = Faker::Number.between(1, 4)
+  numPreferences = Faker::Number.between(1, 2)
+  
+  #Start Assignment
   user = User.create!(name:  name,
                email: email,
                last_name: last_name,
@@ -191,4 +196,19 @@ end
                parent_recieve_emails: parent_recieve_emails,
                teacher: teacher,
                admin: admin)
+               
+  numFreePlayRoomSessions.times do |a|
+    # Variables for the freePlayRoom table of students
+    date = "#{Faker::Number.between(1, 30)}/#{Faker::Number.between(1, 12)}/2017"
+    time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
+    duration = Faker::Number.between(1, 5)
+  
+    Availability.create!(user_email: user.email,
+                      user_id: user.id, 
+                      date: date, 
+                      time: time,
+                      duration: duration)
+  end
+  
+  
 end
