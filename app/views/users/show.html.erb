@@ -16,6 +16,8 @@
         <%= @user.email %>
         <br>
         <%= @user.address %>
+        <br>
+        <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
         
         <% if @user.user_recieve_emails == true %>
           <p>You have elected to recieve emails</p>
