@@ -49,7 +49,7 @@ Interview.create!(user_email: user.email,
   else
     gender = "Female"
   end
-  address = "#{Faker::Address.street_address(include_secondry = false)}, QLD"
+  address = "#{Faker::Address.street_address(false)}, QLD"
   email = "teacher-#{n+1}@teacher.org"
   facebook_ID = "www.facebook.com/#{name}#{last_name}"
   teacher_qualifications = "Graduated #{Faker::University.name}"
@@ -143,23 +143,39 @@ end
 20.times do |n|
   name  = Faker::Name.first_name
   last_name = Faker::Name.last_name
-  yearOfBirth = Faker::Number.between(1980, 1995)
+  yearOfBirth = Faker::Number.between(1980, 2010)
   dob = "#{Faker::Number.between(1, 30)}/#{Faker::Number.between(1, 12)}/#{yearOfBirth}"
-  address = "#{Faker::Address.street_address(include_secondry = false)}, QLD"
+  address = "#{Faker::Address.street_address(false)}, QLD"
+  
   if Faker::Boolean.boolean
     facebook_ID = "www.facebook.com/#{name}#{last_name}"
   end
+  
   if Faker::Boolean.boolean
     gender = "Male"
   else
     gender = "Female"
   end
+  
+  if yearOfBirth >= 1998
+    parent_name = Faker::Name.first_name
+    parent_email = "#{name}#{last_name}@parent.com"
+    parent_moblie = Faker::PhoneNumber.phone_number
+    parent_recieve_emails = Faker::Boolean.boolean
+  else
+    parent_name = "NA"
+    parent_email = "NA"
+    parent_moblie = "NA"
+    parent_recieve_emails = false
+  end
+  
+  user_recieve_emails = Faker::Boolean.boolean
   email = "student-#{n+1}@student.org"
   password = "password"
   teacher = false
   admin = false
   
-  User.create!(name:  name,
+  user = User.create!(name:  name,
                email: email,
                last_name: last_name,
                dob: dob,
@@ -168,6 +184,11 @@ end
                facebook_ID: facebook_ID,
                password:              password,
                password_confirmation: password,
+               parent_name: parent_name,
+               parent_email: parent_email,
+               parent_moblie: parent_moblie,
+               user_recieve_emails: user_recieve_emails,
+               parent_recieve_emails: parent_recieve_emails,
                teacher: teacher,
                admin: admin)
 end
