@@ -28,7 +28,7 @@ class SkillsController < ApplicationController
   
   def update
     @skills = Skill.find(params[:id])
-    if @skills.update_attribute(skill_params)
+    if @skills.update_attributes(skill_params)
       flash[:success] = "Skill Edited!"
       redirect_to(my_skills_path)
     else

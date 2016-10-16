@@ -1,2 +1,12 @@
-<h1>Skills#delete</h1>
-<p>Find me in app/views/skills/delete.html.erb</p>
+<% provide(:title, "Delete Skill") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
+  <%= form_for(@skills, :method => 'delete') do |f| %>
+  <h1> Are you sure you wish to perminently delete this Skill? </h1>
+  <%= f.submit "Delete Skill", class: "btn btn-danger" %>
+  <% end %>
+  
+  </div>
+</div>
