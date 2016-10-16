@@ -97,6 +97,10 @@ Interview.create!(user_email: user.email,
   end
   language_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
   
+  # How many availabilities or skills does each teacher have?
+  numAvailabilities = Faker::Number.between(1, 4)
+  numSkills = Faker::Number.between(1, 2)
+  
   # Assignment
   user = User.create!(name:  name,
                last_name: last_name,
@@ -111,7 +115,7 @@ Interview.create!(user_email: user.email,
                password_confirmation: password,
                teacher: teacher)
                
-  4.times do |a|             
+  numAvailabilities.times do |a|             
     Availability.create!(user_email: user.email,
                       user_id: user.id, 
                       day: day, 
@@ -119,7 +123,7 @@ Interview.create!(user_email: user.email,
                       duration: duration)
   end
   
-  2.times do |a|             
+  numSkills.times do |a|             
     Skill.create!(user_email: user.email,
                       user_id: user.id, 
                       instrument: instrument, 
