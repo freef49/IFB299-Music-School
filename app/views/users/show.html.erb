@@ -8,12 +8,21 @@
         <%= @user.name %>
         <%= @user.last_name %>
         <br>
+        <%= @user.gender %>
+        <br>
         <%= @user.dob %>
         <br>
         <%= @user.facebook_ID %>
         <%= @user.email %>
         <br>
         <%= @user.address %>
+        <br>
+        <% if @user.teacher == true %>
+        <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
+        <% else %>
+        <p><b>Parent Name: <%= @user.parent_name %></b></p>
+        <p><b>Parent Email: <%= @user.parent_email %></b></p>
+        <% end %>
         
         <% if @user.user_recieve_emails == true %>
           <p>You have elected to recieve emails</p>

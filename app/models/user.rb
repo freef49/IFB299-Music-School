@@ -80,7 +80,7 @@ class User < ApplicationRecord
   end
   
   def admin?
-    if self.admin.nil?
+    if self.admin.nil? || self.admin == false
       return false
     else
       return true
