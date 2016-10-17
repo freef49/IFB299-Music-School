@@ -20,7 +20,7 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     log_in_as(@user)
-    get new_skill_path
+    get new_skill
     assert_response :success
   end
 

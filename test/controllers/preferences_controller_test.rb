@@ -1,5 +1,10 @@
 require 'test_helper'
 
+  def setup
+    @user = users(:michael)
+    @other_user = users(:archer)
+  end
+  
 class PreferencesControllerTest < ActionDispatch::IntegrationTest
   test "should get show" do
     get preferences_show_url
@@ -7,7 +12,8 @@ class PreferencesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get preferences_new_url
+    log_in_as(@user)
+    get new_preference_path
     assert_response :success
   end
 

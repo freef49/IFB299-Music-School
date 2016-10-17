@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:michael)
+    @other_user = users(:archer)
+  end
+  
   test "should get index" do
+    log_in_as(@user)
     get my_availabilities_path
     assert_response :success
   end
