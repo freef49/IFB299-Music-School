@@ -8,7 +8,8 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "should get index" do
-    get my_skills_path(@user)
+    log_in_as(@user)
+    get my_skills_path
     assert_response :success
   end
 
@@ -18,7 +19,8 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_skill_path(@user)
+    log_in_as(@user)
+    get new_skill_path
     assert_response :success
   end
 
