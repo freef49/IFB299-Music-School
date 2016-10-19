@@ -57,7 +57,26 @@
 .carousel-heading-link{
     color:#337ab7;
 }
+// Contact page
+.contact-image{
+    margin:auto;
+    margin-top: 5.5rem;
+    height:300px;
+    width:300px;
+    repeat:no-repeat;
+    background-size: cover;
+	background-position: center;
+}
+.contact-figcaption{
+        padding-left: 32.5rem;
+}
 
+// about
+.about-text{
+    letter-spacing: 1px;
+    line-height: 1.5;
+    padding-top: 10rem;
+}
 
 // images
 
@@ -90,4 +109,21 @@
 }
 #violin-icon{
     background-image: url('violin-icon.png');
+}
+#mikawilliams{
+    background-image: url('mikawilliams.jpg');
+}
+
+// About
+#teacher1{
+    background-image: url('teacher1.jpg');
+}
+#teacher2{
+    background-image: url('teacher2.jpg');
+}
+#teacher3{
+    background-image: url('teacher3.jpg');
+}
+#teacher4{
+    background-image: url('teacher4.jpg');
 }
