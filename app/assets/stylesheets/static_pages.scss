@@ -36,7 +36,43 @@
   transform: scale(1.1);
 }
 
+// carousel
+
+.carousel-div-wrapper{
+    margin-bottom: 5.5rem;
+}
+
+.carousel-image{
+    height:700px;
+    width:100%;
+    repeat:no-repeat;
+    background-size: cover;
+	background-position: center;
+}
+.carousel-heading{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.carousel-heading-link{
+    color:#337ab7;
+}
+
+
 // images
+
+// home page
+
+#learning-slider-1{
+    background-image: url('learning-slider-1.png');
+}
+#learning-slider-2{
+    background-image: url('learning-slider-2.jpg');
+}
+#learning-slider-3{
+    background-image: url('learning-slider-3.jpg');
+}
+
 #guitar-icon{
     background-image: url('guitar-icon.png');
 }
