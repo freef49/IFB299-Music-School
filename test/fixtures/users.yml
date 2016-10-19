@@ -20,6 +20,7 @@ teacher1:
   gender: Male
   password_digest: <%= User.digest('password') %>
   teacher_qualifications: Graduated Queensland University of Technology
+  user_recieve_emails: true
   teacher: true
   admin: false
   
@@ -33,6 +34,7 @@ teacher2:
   gender: Female
   password_digest: <%= User.digest('password') %>
   teacher_qualifications: Graduated University Queensland
+  user_recieve_emails: false
   teacher: true
   admin: false
   
@@ -45,6 +47,7 @@ student1:
   dob: 10/01/1995
   gender: Male
   password_digest: <%= User.digest('password') %>
+  user_recieve_emails: false
   teacher: false
   admin: false
   
@@ -60,6 +63,8 @@ student2:
   parent_name: Sally
   parent_email: sally@parent.com
   parent_moblie: 0448 499 855
+  user_recieve_emails: true
+  parent_recieve_emails: true
   teacher: false
   admin: false
   
