@@ -3,8 +3,8 @@ require 'test_helper'
 class SkillsControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @user = users(:michael)
-    @other_user = users(:archer)
+    @user = users(:mika)
+    @other_user = users(:teacher1)
   end
   
   test "should get index" do
