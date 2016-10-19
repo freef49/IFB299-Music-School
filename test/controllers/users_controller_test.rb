@@ -6,8 +6,8 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @user = users(:michael)
-    @other_user = users(:archer)
+    @admin = users(:mika)
+    @non_admin = users(:teacher1)
   end
   
   test "should get new" do
@@ -16,14 +16,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "should redirect edit when not logged in" do
-    get edit_user_path(@user)
+    get edit_user_path(@admin )
     assert_not flash.empty?
     assert_redirected_to login_url
   end
 
   test "should redirect update when not logged in" do
-    patch user_path(@user), params: { user: { name: @user.name,
-                                              email: @user.email } }
+    patch user_path(@admin ), params: { user: { name: @admin .name,
+                                              email: @admin .email } }
     assert_not flash.empty?
     assert_redirected_to login_url
   end
@@ -35,15 +35,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   
   test "should redirect destroy when not logged in" do
     assert_no_difference 'User.count' do
-      delete user_path(@user)
+      delete user_path(@admin )
     end
     assert_redirected_to login_url
   end
 
   test "should redirect destroy when logged in as a non-admin" do
-    log_in_as(@other_user)
+    log_in_as(@non_admin)
     assert_no_difference 'User.count' do
-      delete user_path(@user)
+      delete user_path(@admin)
     end
     assert_redirected_to root_url
   end

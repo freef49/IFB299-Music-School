@@ -4,7 +4,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
 
   def setup
     ActionMailer::Base.deliveries.clear
-    @user = users(:michael)
+    @user = users(:mika)
   end
 
   test "password resets" do
