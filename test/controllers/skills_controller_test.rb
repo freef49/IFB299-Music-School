@@ -3,35 +3,33 @@ require 'test_helper'
 class SkillsControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @user = users(:mika)
-    @other_user = users(:teacher1)
+    @admin = users(:mika)
+    @teacher = users(:teacher1)
+    @student = users(:student1)
+    @skill = skills(:one)
   end
   
   test "should get index" do
-    log_in_as(@user)
+    log_in_as(@teacher)
     get my_skills_path
     assert_response :success
   end
 
-  test "should get show" do
-    get show_skill_path
-    assert_response :success
-  end
-
   test "should get new" do
-    log_in_as(@user)
-    get new_skill
+    log_in_as(@teacher)
+    get new_skill_path
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_skill_path
+    log_in_as(@teacher)
+    get edit_skill_path(@skill)
     assert_response :success
   end
 
   test "should get delete" do
-    get delete_skill_path
+    log_in_as(@teacher)
+    get delete_skill_path(@skill)
     assert_response :success
   end
-
 end
