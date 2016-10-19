@@ -1,27 +1,108 @@
 <!-- Content for the home page -->
+<h1>Welcome to Mika Music School</h1>
 
 
-<div class="center jumbotron">
-  <h1>Welcome to Mika Music School</h1>
 
-  <h2>Life is a musical, learn to sing and play along</h2>
-    <h2>Come join the discussion on <a href="https://www.facebook.com/mikasmusicschool/" >facebook</a> now!</h2>
+  
+<!--</div>-->
 
-  <% if logged_in?%>
-  <% else %>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  <% end %>
+<div id="carousel-example-generic" class="carousel slide carousel-div-wrapper" data-ride="carousel" data-interval="3000">
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner carousel-image">
+    <div class="item active">
+      <div class="carousel-image" id="learning-slider-1"></div>
+      <div class="carousel-caption">
+        <h2 class="carousel-heading">Life is a musical, learn to sing and play along</h2>
+        <h2 class="carousel-heading">Come join the discussion on <a href="https://www.facebook.com/mikasmusicschool/" class="carousel-heading-link">facebook</a> now!</h2>
+      	<% if logged_in?%>
+        <% else %>
+          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="item carousel-image">
+    <div class="carousel-image" id="learning-slider-2"></div>
+      <div class="carousel-caption">
+        <h2 class="carousel-heading">Life is a musical, learn to sing and play along</h2>
+        <h2 class="carousel-heading">Come join the discussion on <a href="https://www.facebook.com/mikasmusicschool/" class="carousel-heading-link">facebook</a> now!</h2>
+      	<% if logged_in?%>
+        <% else %>
+          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="item carousel-image">
+      <div class="carousel-image" id="learning-slider-3"></div>
+      <div class="carousel-caption">
+        <h2 class="carousel-heading">Life is a musical, learn to sing and play along</h2>
+        <h2 class="carousel-heading">Come join the discussion on <a href="https://www.facebook.com/mikasmusicschool/" class="carousel-heading-link">facebook</a> now!</h2>
+      	<% if logged_in?%>
+        <% else %>
+          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
 
 <div>
   <div class="row">
-    <div class="col-xs-4 col-sx-offset-2">
-      <div>
+    <div class="col-md-4 col-xs-6">
+      <a class="home-icon" href="/signup.html">
         <div class="home-instrument-image" id="guitar-icon"></div>
-        <p>
+        <h2>
           Click here, to learn the guitar!
-        </p>
-      </div>
+        </h2>
+      </a>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <a class="home-icon" href="/signup.html">
+        <div class="home-instrument-image" id="percussion-icon"></div>
+        <h2>
+          Click here, to learn percussion!
+        </h2>
+      </a>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <a class="home-icon" href="/signup.html">
+        <div class="home-instrument-image" id="piano-icon"></div>
+        <h2>
+          Click here, to learn the piano!
+        </h2>
+      </a>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <a class="home-icon" href="/signup.html">
+        <div class="home-instrument-image" id="saxophone-icon"></div>
+        <h2>
+          Click here, to learn the saxophone!
+        </h2>
+      </a>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <a class="home-icon" href="/signup.html">
+        <div class="home-instrument-image" id="trumpet-icon"></div>
+        <h2>
+          Click here, to learn the trumpet!
+        </h2>
+      </a>
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <a class="home-icon" href="/signup.html">
+        <div class="home-instrument-image" id="violin-icon"></div>
+        <h2>
+          Click here, to learn the violin!
+        </h2>
+      </a>
     </div>
   </div>
 </div>

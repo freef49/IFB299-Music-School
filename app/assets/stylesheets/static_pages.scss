@@ -5,25 +5,89 @@
 // home page
 
 .home-instrument-image{
-    width: 10rem;
+    width: 100%;
+    height: 20rem;
+    background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
+.home-icon{
+    display: block;
+    
+    -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.home-icon:hover, .home-icon:hover > h2{
+    color: #0288D1;
+    background: #fff;
+    
+ 
+
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+// carousel
+
+.carousel-div-wrapper{
+    margin-bottom: 5.5rem;
+}
+
+.carousel-image{
+    height:700px;
+    width:100%;
+    repeat:no-repeat;
+    background-size: cover;
+	background-position: center;
+}
+.carousel-heading{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.carousel-heading-link{
+    color:#337ab7;
+}
+
+
 // images
+
+// home page
+
+#learning-slider-1{
+    background-image: url('learning-slider-1.png');
+}
+#learning-slider-2{
+    background-image: url('learning-slider-2.jpg');
+}
+#learning-slider-3{
+    background-image: url('learning-slider-3.jpg');
+}
+
 #guitar-icon{
     background-image: url('guitar-icon.png');
 }
 #percussion-icon{
-    background-image: url('../images/percussion-icon.png');
+    background-image: url('percussion-icon.png');
 }
 #piano-icon{
-    background-image: url('../images/piano-icon.png');
+    background-image: url('piano-icon.png');
 }
 #saxophone-icon{
-    background-image: url('../images/saxophone-icon.png');
+    background-image: url('saxophone-icon.png');
 }
 #trumpet-icon{
-    background-image: url('../images/trumpet-icon.png');
+    background-image: url('trumpet-icon.png');
 }
 #violin-icon{
-    background-image: url('../images/violin-icon.png');
+    background-image: url('violin-icon.png');
 }
