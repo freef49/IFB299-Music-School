@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// All pages
+
+.top-div{
+    margin-top: 5.5rem;
+}
+
 // home page
 
 .home-instrument-image{
@@ -43,6 +49,7 @@
 }
 
 .carousel-image{
+    box-shadow: 11px 8px 3px;
     height:700px;
     width:100%;
     repeat:no-repeat;
@@ -57,37 +64,73 @@
 .carousel-heading-link{
     color:#337ab7;
 }
+// Contact page
+.contact-image{
+    margin:auto;
+    margin-top: 5.5rem;
+    height:300px;
+    width:300px;
+    repeat:no-repeat;
+    background-size: cover;
+	background-position: center;
+}
+.contact-figcaption{
+        padding-left: 32.5rem;
+}
 
+// about
+.about-text{
+    letter-spacing: 1px;
+    line-height: 1.5;
+    padding-top: 10rem;
+}
 
-// images
+// ALL IMAGES
 
 // home page
 
 #learning-slider-1{
-    background-image: url('learning-slider-1.png');
+    background-image: url('https://www.email.stevef.xyz/learning-slider-1.png');
 }
 #learning-slider-2{
-    background-image: url('learning-slider-2.jpg');
+    background-image: url('https://www.email.stevef.xyz/learning-slider-2.jpg');
 }
 #learning-slider-3{
-    background-image: url('learning-slider-3.jpg');
+    background-image: url('https://www.email.stevef.xyz/learning-slider-3.jpg');
 }
 
 #guitar-icon{
-    background-image: url('guitar-icon.png');
+    background-image: url('https://www.email.stevef.xyz/guitar-icon.png');
 }
 #percussion-icon{
-    background-image: url('percussion-icon.png');
+    background-image: url('https://www.email.stevef.xyz/percussion-icon.png');
 }
 #piano-icon{
-    background-image: url('piano-icon.png');
+    background-image: url('https://www.email.stevef.xyz/piano-icon.png');
 }
 #saxophone-icon{
-    background-image: url('saxophone-icon.png');
+    background-image: url('https://www.email.stevef.xyz/saxophone-icon.png');
 }
 #trumpet-icon{
-    background-image: url('trumpet-icon.png');
+    background-image: url('https://www.email.stevef.xyz/trumpet-icon.png');
 }
 #violin-icon{
-    background-image: url('violin-icon.png');
+    background-image: url('https://www.email.stevef.xyz/violin-icon.png');
+}
+#mikawilliams{
+    background-image: url('https://www.email.stevef.xyz/mikawilliams.jpg');
+}
+
+// About
+#teacher1{
+    background-image: url('https://www.email.stevef.xyz/teacher1.jpg');
+}
+#teacher2{
+    background-image: url('https://www.email.stevef.xyz/teacher2.jpg');
+}
+#teacher3{
+    background-image: url('https://www.email.stevef.xyz/teacher3.jpg');
+}
+#teacher4{
+    background-image: url('https://www.email.stevef.xyz/teacher4.jpg');
 }
