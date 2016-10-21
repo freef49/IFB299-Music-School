@@ -18,6 +18,7 @@
   
   <tbody>
   <% @preferences.each do |preferences| %>
+  <% if preferences.user_email == current_user.email %>
   <tr>
     <td><%= preferences.preferred_day %></td>
     <td><%= preferences.preferred_time %></td>
@@ -29,6 +30,7 @@
       <a href="<%= delete_preference_path(preferences) %>" class="btn btn-danger" role="button">Delete</a>
     </td>
   </tr>
+  <% end %>
   <% end %>
   </tbody>
 </table>

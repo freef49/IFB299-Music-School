@@ -1,13 +1,13 @@
 require 'test_helper'
 
+class PreferencesControllerTest < ActionDispatch::IntegrationTest
+  
   def setup
     @admin = users(:mika)
     @teacher = users(:teacher1)
     @student = users(:student1)
     @preference = preferences(:one)
   end
-  
-class PreferencesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     log_in_as(@student)

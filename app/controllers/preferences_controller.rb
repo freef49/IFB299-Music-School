@@ -44,7 +44,7 @@ class PreferencesController < ApplicationController
     @preferences = Preference.find(params[:id])
     @preferences.destroy
     flash[:success] = "Preference deleted!"
-    redirect_to(my_preferences_path)
+    redirect_to(my_preference_path)
   end
   
   private
