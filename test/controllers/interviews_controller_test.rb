@@ -6,21 +6,25 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@admin)
     get my_interviews_path
     assert_response :success
+    assert_select "title", "My Interviews | #{@base_title}"
   end
   test "admin should get new" do
     log_in_as(@admin)
     get new_interview_path
     assert_response :success
+    assert_select "title", "Book Interview | #{@base_title}"
   end
   test "admin should get edit" do
     log_in_as(@admin)
     get edit_interview_path(@interview1)
     assert_response :success
+    assert_select "title", "Edit Interview | #{@base_title}"
   end
   test "admin should get delete" do
     log_in_as(@admin)
     get delete_interview_path(@interview1)
     assert_response :success
+    assert_select "title", "Delete Interview | #{@base_title}"
   end
   
   

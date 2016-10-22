@@ -5,21 +5,25 @@ class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@teacher1)
     get my_availabilities_path
     assert_response :success
+    assert_select "title", "My Availabilities | #{@base_title}"
   end
   test "should get new" do
     log_in_as(@teacher1)
     get new_availability_path
     assert_response :success
+    assert_select "title", "Add New Availability | #{@base_title}"
   end
   test "should get edit" do
     log_in_as(@teacher1)
     get edit_availability_path(@availability1)
     assert_response :success
+    assert_select "title", "Edit Availability | #{@base_title}"
   end
   test "should get delete" do
     log_in_as(@teacher1)
     get delete_availability_path(@availability1)
     assert_response :success
+    assert_select "title", "Delete Availability | #{@base_title}"
   end
   
   

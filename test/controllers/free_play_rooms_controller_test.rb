@@ -6,21 +6,25 @@ class FreePlayRoomsControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@student1)
     get current_sessions_path
     assert_response :success
+    assert_select "title", "Free Play Room | #{@base_title}"
   end
   test "student should get new" do
     log_in_as(@student1)
     get book_session_path
     assert_response :success
+    assert_select "title", "Book Free Play Room | #{@base_title}"
   end
   test "student should get edit" do
     log_in_as(@student1)
     get edit_free_play_room_path(@free_play_room1)
     assert_response :success
+    assert_select "title", "Edit Booking | #{@base_title}"
   end
   test "student should get delete" do
     log_in_as(@student1)
     get delete_free_play_room_path(@free_play_room1)
     assert_response :success
+    assert_select "title", "Delete Booking | #{@base_title}"
   end
   
   

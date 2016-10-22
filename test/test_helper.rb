@@ -26,6 +26,7 @@ class ActiveSupport::TestCase
     @preference2 = preferences(:two)
     @skill1 = skills(:one)
     @skill2 = skills(:two)
+    @base_title = 'Mika Music School'
   end
   
   # Returns true if a test user is logged in.
