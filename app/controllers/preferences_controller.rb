@@ -1,5 +1,8 @@
 class PreferencesController < ApplicationController
   
+  before_action :logged_in_user
+  before_action :student_user
+  
   def index
     @preferences = Preference.where(:user_email => current_user.email)
   end
