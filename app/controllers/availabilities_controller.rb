@@ -1,6 +1,6 @@
 class AvailabilitiesController < ApplicationController
   
-before_action :activated_user, only: [:index]
+before_action :activated_user, only: [:index, :new, :show, :edit, :delete]
   
   
   def index
@@ -58,8 +58,8 @@ before_action :activated_user, only: [:index]
   
   def activated_user
       if !current_user.activated
-       flash[:info]="You have not been activated to input availability yet"
+       flash[:info]="You do not have permission to input availability yet"
        redirect_to(root_url)
-     end
-    end
+      end
+  end
 end

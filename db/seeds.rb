@@ -82,8 +82,8 @@ Interview.create!(user_email: user.email,
                password_confirmation: password,
                teacher: teacher,
                admin: admin,
-              activated: false,
-              activated_at: Time.zone.now)
+               activated: false,
+               activated_at: Time.zone.now)
                
   numAvailabilities.times do |a|
     # Variables for the Availability table of teacher
@@ -170,7 +170,7 @@ end
                parent_recieve_emails: parent_recieve_emails,
                teacher: teacher,
                admin: admin,
-               activated: true,
+               activated:  false,
               activated_at: Time.zone.now)
                
   numFreePlayRoomSessions.times do |a|
