@@ -8,6 +8,6 @@ one:
 one:
   user_id: 3
   user_email: techteacher@teacher.org
-  day: Sat
+  day: Friday
   time: 09:30
-  duration: 20
+  duration: 5

@@ -1,5 +1,9 @@
 class AvailabilitiesController < ApplicationController
 
+  before_action :logged_in_user
+  before_action :teacher_user
+  
+  
   def index
     @availabilities = Availability.all
   end

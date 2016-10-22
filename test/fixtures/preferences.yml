@@ -8,10 +8,10 @@ one:
   preferred_teacher_gender: Male
 
 two:
-  user_id: 4
-  user_email: student@example.gov
+  user_id: 5
+  user_email: num2@student.gov
   preferred_day: Friday
   preferred_time: 30:11
-  instrument: None
+  instrument: Drums
   preferred_teacher_language: English
   preferred_teacher_gender: None
