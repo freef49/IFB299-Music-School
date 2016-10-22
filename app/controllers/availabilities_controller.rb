@@ -1,4 +1,8 @@
 class AvailabilitiesController < ApplicationController
+  
+before_action :activated_user, only: [:index]
+  
+  
   def index
     @availabilities = Availability.all
   end
@@ -51,4 +55,11 @@ class AvailabilitiesController < ApplicationController
   def availability_params
     params.require(:availability).permit(:user_email, :day, :time, :duration, :user_id)
   end
+  
+  def activated_user
+      if !current_user.activated
+       flash[:info]="You have not been activated to input availability yet"
+       redirect_to(root_url)
+     end
+    end
 end
