@@ -82,7 +82,7 @@ Interview.create!(user_email: user.email,
                password_confirmation: password,
                teacher: teacher,
                admin: admin,
-              activated: true,
+              activated: false,
               activated_at: Time.zone.now)
                
   numAvailabilities.times do |a|

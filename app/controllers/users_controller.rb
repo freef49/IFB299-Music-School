@@ -27,8 +27,9 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       if @user.teacher
-        flash[:success] = "Welcome to Mika Music! Add some Availabilities to get Started!"
-        redirect_to(my_availabilities_path)
+        UserMailer.account_activation(@user).deliver_now
+        flash[:success] = "Welcome to Mika Music! An email has been sent with the information needed to start holding lessons"
+        redirect_to root_url
       else
         
         flash[:success] = "Welcome to Mika Music!"
@@ -76,6 +77,7 @@ class UsersController < ApplicationController
                                    :password_confirmation, :teacher, :parent_name, :parent_email, :parent_moblie,
                                    :user_recieve_emails, :parent_recieve_emails, :teacher_qualifications)
     end
+    
     
     def logged_in_user
       unless logged_in?
