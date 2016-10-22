@@ -27,7 +27,6 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Delete Interview | #{@base_title}"
   end
   
-  
   test "teacher should not get index" do
     log_in_as(@teacher1)
     get my_interviews_path
@@ -69,7 +68,6 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
     get delete_interview_path(@interview1)
     assert_redirected_to root_url
   end
-
 
   test "unlogged user should not get index" do
     get my_interviews_path
