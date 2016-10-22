@@ -27,7 +27,7 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
   test "teacher should not get index" do
     log_in_as(@teacher1)
     get my_interviews_path
-    assert_response :success
+    assert_redirected_to root_url
   end
   test "teacher should not get new" do
     log_in_as(@teacher1)
@@ -48,7 +48,7 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
   test "student should not get index" do
     log_in_as(@student1)
     get my_interviews_path
-    assert_response :success
+    assert_redirected_to root_url
   end
   test "student should not get new" do
     log_in_as(@student1)
@@ -56,7 +56,7 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
   test "student should not get edit" do
-    log_in_as(@tstudent1)
+    log_in_as(@student1)
     get edit_interview_path(@interview1)
     assert_redirected_to root_url
   end
@@ -72,7 +72,7 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
   test "unlogged user should not get new" do
-    get new_interviews_path
+    get new_interview_path
     assert_redirected_to login_url
   end
   test "unlogged user should not get edit" do

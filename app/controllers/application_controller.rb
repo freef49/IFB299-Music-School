@@ -19,10 +19,14 @@ class ApplicationController < ActionController::Base
     end
     
     def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to(root_url) unless current_user.admin == true
     end
     
     def teacher_user
       redirect_to(root_url) unless current_user.teacher?
+    end
+    
+    def student_user
+      redirect_to(root_url) unless !current_user.teacher? && !current_user.admin?
     end
 end

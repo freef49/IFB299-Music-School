@@ -1,4 +1,9 @@
 class FreePlayRoomsController < ApplicationController
+  
+  before_action :logged_in_user
+  before_action :student_user, :except => [:index] 
+  
+  
   def index
     @free_play_rooms = FreePlayRoom.all
   end
