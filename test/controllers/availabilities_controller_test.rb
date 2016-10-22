@@ -31,4 +31,15 @@ class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
     get delete_availability_path(@availability)
     assert_response :success
   end
+  
+  test "should redirect student to home page" do
+    log_in_as(@student)
+    get my_availabilities_path
+    assert_redirected_to root_url
+  end
+  
+  test "should redirect unlogged in user to home page" do
+    get my_availabilities_path
+    assert_redirected_to root_url
+  end
 end

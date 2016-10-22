@@ -76,22 +76,4 @@ class UsersController < ApplicationController
                                    :password_confirmation, :teacher, :parent_name, :parent_email, :parent_moblie,
                                    :user_recieve_emails, :parent_recieve_emails, :teacher_qualifications)
     end
-    
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
-    
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
-    
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
-
 end
