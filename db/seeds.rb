@@ -25,7 +25,9 @@ user = User.create!(name:  "Mika",
               password:              "password",
               password_confirmation: "password",
               teacher_qualifications: "Graduate of Drama studies and Bachelor in Arts",
-              admin: true)
+              admin: true,
+              activated: true,
+              activated_at: Time.zone.now)
 
 Interview.create!(user_email: user.email,
                       user_id: user.id, 
@@ -79,7 +81,9 @@ Interview.create!(user_email: user.email,
                password:              password,
                password_confirmation: password,
                teacher: teacher,
-               admin: admin)
+               admin: admin,
+              activated: true,
+              activated_at: Time.zone.now)
                
   numAvailabilities.times do |a|
     # Variables for the Availability table of teacher
@@ -165,7 +169,9 @@ end
                user_recieve_emails: user_recieve_emails,
                parent_recieve_emails: parent_recieve_emails,
                teacher: teacher,
-               admin: admin)
+               admin: admin,
+               activated: true,
+              activated_at: Time.zone.now)
                
   numFreePlayRoomSessions.times do |a|
     # Variables for the freePlayRoom table of students

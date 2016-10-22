@@ -9,6 +9,9 @@ mika:
   gender: Female
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
 teacher1:
   name: Teahcer
@@ -23,6 +26,9 @@ teacher1:
   user_recieve_emails: true
   teacher: true
   admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
 teacher2:
   name: Teahcer
@@ -37,6 +43,9 @@ teacher2:
   user_recieve_emails: false
   teacher: true
   admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
 student1:
   name: student
@@ -50,6 +59,9 @@ student1:
   user_recieve_emails: false
   teacher: false
   admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
 student2:
   name: student
@@ -67,6 +79,9 @@ student2:
   parent_recieve_emails: true
   teacher: false
   admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
 <% 30.times do |n| %>
 user_<%= n %>:
@@ -79,4 +94,6 @@ user_<%= n %>:
   password_digest: <%= User.digest('password') %>
   teacher: false
   admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
