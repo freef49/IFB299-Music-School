@@ -1,12 +1,7 @@
 class AvailabilitiesController < ApplicationController
-<<<<<<< HEAD
-  
-before_action :activated_user, only: [:index, :new, :show, :edit, :delete]
-=======
 
   before_action :logged_in_user
   before_action :teacher_user
->>>>>>> origin/AutomatedTesting
   
   
   def index
