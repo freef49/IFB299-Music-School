@@ -25,6 +25,10 @@ class AvailabilitiesController < ApplicationController
       render('new')
     end
   end
+  
+  
+  
+
 
   def edit
     @availabilities = Availability.find(params[:id])
