@@ -2,6 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// All pages
+
+body{
+    background-image: url('https://www.email.stevef.xyz/geometry.png');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+
+.top-div{
+    margin-top: 5.5rem;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+h1{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 5em;
+}
+h2{
+    font-size: 1.85rem;
+}
+
+#logo{
+    height: 50px;
+    width: 70px;
+    background-size: cover;
+    background-image: url('https://www.email.stevef.xyz/logo-small.png');
+    background-repeat: no-repeat;
+}
+
+#logo:hover{
+    filter: invert(100%);
+}
+
+.navbar, .navbar-inverse .navbar-nav > li > a{
+    background-color: #eee;
+    color: #111;
+}
+
+.navbar-inverse .navbar-nav > li:hover > a{
+    color: #888;
+}
 
 // home page
 .carousel-btn{
@@ -136,49 +182,3 @@
     background-image: url('https://www.email.stevef.xyz/teacher4.jpg');
 }
 
-// All pages
-
-body{
-    background-image: url('https://www.email.stevef.xyz/geometry.png');
-}
-
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
-
-
-.top-div{
-    margin-top: 5.5rem;
-}
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
-h1{
-    font-family: 'Abril Fatface', cursive;
-    font-size: 5em;
-}
-h2{
-    font-size: 1.85rem;
-}
-
-#logo{
-    height: 50px;
-    width: 70px;
-    background-size: cover;
-    background-image: url('https://www.email.stevef.xyz/logo-small.png');
-    background-repeat: no-repeat;
-}
-
-#logo:hover{
-    filter: invert(100%);
-}
-
-.navbar, .navbar-inverse .navbar-nav > li > a{
-    background-color: #eee;
-    color: #111;
-}
-
-.navbar-inverse .navbar-nav > li:hover > a{
-    color: #888;
-}
