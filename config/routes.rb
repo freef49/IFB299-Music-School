@@ -61,7 +61,7 @@ Rails.application.routes.draw do
     end
   end
   
-    resources :lessons do
+  resources :lessons do
     member do
       get :delete
     end
