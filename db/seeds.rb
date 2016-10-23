@@ -85,18 +85,7 @@ Interview.create!(user_email: user.email,
                activated: false,
                activated_at: Time.zone.now)
                
-  numAvailabilities.times do |a|
-    # Variables for the Availability table of teacher
-    day = daysOpen[Faker::Number.between(0, 4)]
-    time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
-    duration = Faker::Number.between(1, 5)
   
-    Availability.create!(user_email: user.email,
-                      user_id: user.id, 
-                      day: day, 
-                      time: time,
-                      duration: duration)
-  end
   
   numSkills.times do |b|
      # Variables for the Skills table of teacher

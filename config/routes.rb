@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get  '/new_interview',  to: 'interviews#new'
   get  '/my_interviews',  to: 'interviews#index'
   
+  get '/new_lesson',      to: 'lessons#new'
+  get '/my_lessons',      to: 'lessons#index'
+  
   get '/my_preferences',  to: 'preferences#index'
   get '/new_preference',  to: 'preferences#new'
   
@@ -53,6 +56,12 @@ Rails.application.routes.draw do
   end
   
   resources :interviews do
+    member do
+      get :delete
+    end
+  end
+  
+    resources :lessons do
     member do
       get :delete
     end
