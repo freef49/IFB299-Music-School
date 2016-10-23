@@ -1,11 +1,12 @@
 <!--HTML for the header of each page. Needs to be altered after wireframes are completed -->
 
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+  <div class="container navigation-bar">
 
-    <%= link_to "Mika Musical", root_path, id: "logo" %>
+    <a href="/"><div id="logo"></div></a>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Contact", contact_path %></li>
         <li><%= link_to "About",   about_path %></li>
         

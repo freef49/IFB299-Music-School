@@ -5,11 +5,6 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   
-  def setup
-    @admin = users(:mika)
-    @non_admin = users(:teacher1)
-  end
-  
   test "should get new" do
     get signup_path
     assert_response :success
@@ -35,13 +30,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   
   test "should redirect destroy when not logged in" do
     assert_no_difference 'User.count' do
-      delete user_path(@admin )
+      delete user_path(@admin)
     end
     assert_redirected_to login_url
   end
 
   test "should redirect destroy when logged in as a non-admin" do
-    log_in_as(@non_admin)
+    log_in_as(@student1)
     assert_no_difference 'User.count' do
       delete user_path(@admin)
     end

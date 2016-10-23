@@ -1,5 +1,6 @@
 # Test users currently used for website.
 mika:
+  id: 1
   name: Mika
   last_name: Williams
   email: mika@music.com
@@ -14,6 +15,7 @@ mika:
 
   
 teacher1:
+  id: 2
   name: Teahcer
   last_name: num1
   email: teachernum1@example.gov
@@ -31,6 +33,7 @@ teacher1:
 
   
 teacher2:
+  id: 3
   name: Teahcer
   last_name: num2
   email: techteacher@teacher.org

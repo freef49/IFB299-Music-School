@@ -11,13 +11,13 @@ one:
   lesson_cost: $50
 
 two:
-  user_id: 2
+  user_id: 3
   user_email: teachernum1@example.gov
   student_email: num2@student.gov
   start_date: 10/11/2016
   end_date: 31/02/17
-  day: Sunday
-  lesson_time: 01:01
+  day: Moday
+  lesson_time: 13:00
   lesson_type: Drums
   lesson_duration: 1
   lesson_cost: $25
