@@ -161,3 +161,24 @@ h1{
 h2{
     font-size: 1.85rem;
 }
+
+#logo{
+    height: 50px;
+    width: 70px;
+    background-size: cover;
+    background-image: url('https://www.email.stevef.xyz/logo-small.png');
+    background-repeat: no-repeat;
+}
+
+#logo:hover{
+    filter: invert(100%);
+}
+
+.navbar, .navbar-inverse .navbar-nav > li > a{
+    background-color: #eee;
+    color: #111;
+}
+
+.navbar-inverse .navbar-nav > li:hover > a{
+    color: #888;
+}
