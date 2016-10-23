@@ -77,6 +77,7 @@ class UsersController < ApplicationController
                                    :password_confirmation, :teacher, :parent_name, :parent_email, :parent_moblie,
                                    :user_recieve_emails, :parent_recieve_emails, :teacher_qualifications)
     end
+<<<<<<< HEAD
     
     
     def logged_in_user
@@ -96,4 +97,6 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end
 
+=======
+>>>>>>> origin/AutomatedTesting
 end

@@ -1,5 +1,8 @@
 class SkillsController < ApplicationController
   
+  before_action :logged_in_user
+  before_action :teacher_user
+  
   def index
     @skills = Skill.where(:user_email => current_user.email)
   end
