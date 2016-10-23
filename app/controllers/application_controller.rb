@@ -29,4 +29,12 @@ class ApplicationController < ActionController::Base
     def student_user
       redirect_to(root_url) unless !current_user.teacher? && !current_user.admin?
     end
+    
+    def activated_user
+      unless current_user.activated?
+       flash[:info]="You do not have permission to input availability yet"
+       redirect_to(root_url) 
+      end
+    end
+    
 end

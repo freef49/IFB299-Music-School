@@ -79,6 +79,15 @@ class User < ApplicationRecord
     end
   end
   
+  def activated?
+    if self.activated==true
+      return true
+    else
+      return false
+    end
+  end
+  
+  
   def admin?
     if self.admin.nil? || self.admin == false
       return false
