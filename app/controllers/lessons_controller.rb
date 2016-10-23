@@ -4,13 +4,15 @@ class LessonsController < ApplicationController
     @lessons =Lesson.new
   end
   
-  
+  def index
+    @lessons = Lesson.all
+  end
   
   def create
      @lessons = Lesson.new(lesson_params)
      if @lessons.save
        flash[:success] = "Lesson Booked!"
-       redirect_to(root_url)
+       redirect_to(my_lessons_path)
      else
        render('new')
      end

@@ -22,18 +22,18 @@
   
   <tbody>
   <% @lessons.each do |lesson| %>
-  <% if lessons.student_email == current_user.email %>
+  <% if lesson.student_email == current_user.email %>
   <tr>
     
     <td><%= lesson.user_email%></td>
     <td><%= lesson.day%></td>
-    <td><%= lesson.time%></td>
-    <td><%= lesson.type%></td>
+    <td><%= lesson.lesson_time%></td>
+    <td><%= lesson.lesson_type%></td>
     
     
     <td>
-    <!--  <a href="<%= edit_interview_path(interview) %>" class="btn btn-info" role="button">Edit</a>-->
-    <!--  <a href="<%= delete_interview_path(interview) %>" class="btn btn-danger" role="button">Delete</a>-->
+    <!--  <a href="<= edit_interview_path(interview) %>" class="btn btn-info" role="button">Edit</a>-->
+    <!--  <a href="<= delete_interview_path(interview) %>" class="btn btn-danger" role="button">Delete</a>-->
     </td>
     
       <% end %>
