@@ -3,7 +3,9 @@ class LessonsController < ApplicationController
   def new
     @lessons =Lesson.new
   end
-
+  
+  
+  
   def create
      @lessons = Lesson.new(lesson_params)
      if @lessons.save
