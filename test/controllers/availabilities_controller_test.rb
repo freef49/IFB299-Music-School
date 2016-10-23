@@ -26,6 +26,7 @@ class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Delete Availability | #{@base_title}"
   end
   
+  
   test "should redirect student to home page on index attempt" do
     log_in_as(@student1)
     get my_availabilities_path
@@ -46,6 +47,7 @@ class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
     get delete_availability_path(@availability1)
     assert_redirected_to root_url
   end
+  
   
   test "should redirect unlogged to login page on index attempt" do
     get my_availabilities_path
