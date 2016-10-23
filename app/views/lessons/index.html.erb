@@ -8,15 +8,10 @@
   <thead>
   <tr class="header">
     
-  <th>Teacher Email</th>  
+  <th>Lesson With</th>/th>  
   <th>Day</th>
   <th>Time</th>
   <th>Type</th>
-  
-  
-  
-  <th></th>
-  
   </tr>
   </thead>
   
@@ -29,15 +24,19 @@
     <td><%= lesson.day%></td>
     <td><%= lesson.lesson_time%></td>
     <td><%= lesson.lesson_type%></td>
-    
-    
-    <td>
-    <!--  <a href="<= edit_interview_path(interview) %>" class="btn btn-info" role="button">Edit</a>-->
-    <!--  <a href="<= delete_interview_path(interview) %>" class="btn btn-danger" role="button">Delete</a>-->
-    </td>
-    
+
       <% end %>
   </tr>
   <% end %>
+  <% if lesson.user_email == current_user.email %>
+  <tr>
+    
+    <td><%= lesson.student_email%></td>
+    <td><%= lesson.day%></td>
+    <td><%= lesson.lesson_time%></td>
+    <td><%= lesson.lesson_type%></td>
+
+      <% end %>
+  </tr>
   </tbody>
 </table>
