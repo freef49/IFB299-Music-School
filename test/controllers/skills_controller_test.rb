@@ -1,29 +1,35 @@
 require 'test_helper'
 
 class SkillsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get skills_index_url
-    assert_response :success
+  
+  def setup
+    @admin = users(:mika)
+    @teacher = users(:teacher1)
+    @student = users(:student1)
+    @skill = skills(:one)
   end
-
-  test "should get show" do
-    get skills_show_url
+  
+  test "should get index" do
+    log_in_as(@teacher)
+    get my_skills_path
     assert_response :success
   end
 
   test "should get new" do
-    get skills_new_url
+    log_in_as(@teacher)
+    get new_skill_path
     assert_response :success
   end
 
   test "should get edit" do
-    get skills_edit_url
+    log_in_as(@teacher)
+    get edit_skill_path(@skill)
     assert_response :success
   end
 
   test "should get delete" do
-    get skills_delete_url
+    log_in_as(@teacher)
+    get delete_skill_path(@skill)
     assert_response :success
   end
-
 end

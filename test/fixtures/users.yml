@@ -1,46 +1,99 @@
 # Test users currently used for website.
-michael:
-  name: Michael
-  last_name: Example
-  email: michael@example.com
-  dob: 11/12/1234
-  gender: Male
+mika:
+  name: Mika
+  last_name: Williams
+  email: mika@music.com
+  facebook_ID: www.facebook.com/mikaMusic
+  address: '450 Queens St, QLD'
+  dob: 11/12/1980
+  gender: Female
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
-archer:
-  name: Sterling
-  last_name: Archer
-  email: duchess@example.gov
+teacher1:
+  name: Teahcer
+  last_name: num1
+  email: teachernum1@example.gov
+  facebook_ID: www.facebook.com/teachernum1
+  address: '40283 Dunbar St, Grafton, QLD'
   dob: 20/08/1989
   gender: Male
   password_digest: <%= User.digest('password') %>
+  teacher_qualifications: Graduated Queensland University of Technology
+  user_recieve_emails: true
+  teacher: true
+  admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
-lana:
-  name: Lana
-  last_name: Kane
-  email: hands@example.gov
-  dob: 20/08/1989
+  
+teacher2:
+  name: Teahcer
+  last_name: num2
+  email: techteacher@teacher.org
+  facebook_ID: www.facebook.com/teacher1
+  address: '100 Railway Ave, Tingalpa, QLD'
+  dob: 05/08/1991
   gender: Female
   password_digest: <%= User.digest('password') %>
+  teacher_qualifications: Graduated University Queensland
+  user_recieve_emails: false
   teacher: true
+  admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
-malory:
-  name: Malory
-  last_name: Archer
-  email: boss@example.gov
-  dob: 20/08/1989
+student1:
+  name: student
+  last_name: number1
+  email: student@example.gov
+  facebook_ID: www.facebook.com/studentNum1
+  address: '15 Collins St, Boondal, QLD'
+  dob: 10/01/1995
+  gender: Male
+  password_digest: <%= User.digest('password') %>
+  user_recieve_emails: false
+  teacher: false
+  admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+  
+student2:
+  name: student
+  last_name: number2
+  email: num2@student.gov
+  facebook_ID: www.facebook.com/studentNum2
+  address: '10583 Micheal Court, Auchenflower, QLD'
+  dob: 29/09/2000
   gender: Female
   password_digest: <%= User.digest('password') %>
-  teacher: true
-  
+  parent_name: Sally
+  parent_email: sally@parent.com
+  parent_moblie: 0448 499 855
+  user_recieve_emails: true
+  parent_recieve_emails: true
+  teacher: false
+  admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
   
 <% 30.times do |n| %>
 user_<%= n %>:
   name:  <%= "User #{n}" %>
   last_name:  <%= "Test" %>
-  dob: 20/08/1989
+  dob: 01/01/2000
+  address: '101 Random Street, QLD'
   gender: Other
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
+  teacher: false
+  admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>

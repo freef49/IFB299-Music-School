@@ -1,11 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  user_id: 2
+  user_email: teachernum1@example.gov
+  student_email: student@example.gov
+  start_date: 10/11/2016
+  end_date: 10/01/17
+  day: Friday
+  lesson_time: 12:30
+  lesson_type: Guitar Practice
+  lesson_duration: 2
+  lesson_cost: $50
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+two:
+  user_id: 2
+  user_email: teachernum1@example.gov
+  student_email: num2@student.gov
+  start_date: 10/11/2016
+  end_date: 31/02/17
+  day: Sunday
+  lesson_time: 01:01
+  lesson_type: Drums
+  lesson_duration: 1
+  lesson_cost: $25
