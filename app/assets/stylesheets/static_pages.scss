@@ -2,13 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// All pages
-
-.top-div{
-    margin-top: 5.5rem;
-}
 
 // home page
+.carousel-btn{
+    font-size:25px;
+    box-shadow: 0px 0px 50px #fff;
+}
 
 .home-instrument-image{
     width: 100%;
@@ -17,6 +16,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
+
 
 .home-icon{
     display: block;
@@ -34,7 +34,8 @@
 }
 .home-icon:hover, .home-icon:hover > h2{
     color: #0288D1;
-    background: #fff;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0);
     
  
 
@@ -57,7 +58,7 @@
 	background-position: center;
 }
 .carousel-heading{
-    color:#fff;
+
     font-size: 2.5rem;
 }
 
@@ -133,4 +134,30 @@
 }
 #teacher4{
     background-image: url('https://www.email.stevef.xyz/teacher4.jpg');
+}
+
+// All pages
+
+body{
+    background-image: url('https://www.email.stevef.xyz/geometry.png');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+
+.top-div{
+    margin-top: 5.5rem;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+h1{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 5em;
+}
+h2{
+    font-size: 1.85rem;
 }
