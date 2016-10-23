@@ -24,6 +24,10 @@ before_action :activated_user, only: [:index, :new, :show, :edit, :delete]
       render('new')
     end
   end
+  
+  
+  
+
 
   def edit
     @availabilities = Availability.find(params[:id])
