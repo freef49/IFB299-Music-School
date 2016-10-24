@@ -8,7 +8,7 @@
   <thead>
   <tr class="header">
     
-  <th>Lesson With</th>/th>  
+  <th>Lesson With</th>
   <th>Day</th>
   <th>Time</th>
   <th>Type</th>
@@ -19,15 +19,14 @@
   <% @lessons.each do |lesson| %>
   <% if lesson.student_email == current_user.email %>
   <tr>
-    
     <td><%= lesson.user_email%></td>
     <td><%= lesson.day%></td>
     <td><%= lesson.lesson_time%></td>
     <td><%= lesson.lesson_type%></td>
-
       <% end %>
   </tr>
-  <% end %>
+  
+
   <% if lesson.user_email == current_user.email %>
   <tr>
     
@@ -38,5 +37,6 @@
 
       <% end %>
   </tr>
+  <% end %>
   </tbody>
 </table>
