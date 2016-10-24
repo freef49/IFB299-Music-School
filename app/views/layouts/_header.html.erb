@@ -32,7 +32,7 @@
                 <li><%= link_to "My Preferences", my_preferences_path %></li>
                 <li><%= link_to "Free Play Room", current_sessions_path %></li>
               <% end %>
-              <li><%= link_to "My Timetable", '#' %></li>
+              <li><%= link_to "My Timetable", my_lessons_path%></li>
               <% if current_user.teacher? && !current_user.admin? %>
                 <li><%= link_to "My Availability", my_availabilities_path %></li>
                 <li><%= link_to "My Skills", my_skills_path %></li>
