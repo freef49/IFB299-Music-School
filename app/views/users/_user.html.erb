@@ -6,10 +6,10 @@
   <%= user.email %>
   <% if current_user.admin? && !current_user?(user) %>
     <br>
-    <%= button_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" } %>
-    <%= button_to "Make Admin", user, data: { confirm: "Are you sure?" } %>
+    <%= button_to "Delete", user, method: :delete, form_class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+    <%= button_to "Make Admin", user, form_class: "btn btn-info", data: { confirm: "Are you sure?" } %>
     <% if user.teacher? && !user.activated?%>
-     <%= button_to "Activate Teacher",edit_account_activation_url(user) %>
+     <%= button_to "Activate Teacher",edit_account_activation_url(user), form_class: "btn btn-success" %>
      <% end %>
   <% end %>
 </li>
