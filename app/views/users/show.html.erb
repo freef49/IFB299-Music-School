@@ -20,13 +20,10 @@
           <%= @user.address %>
           <br>
           <% if @user.teacher == true %>
-            <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
-          <% end %>
-          <% if !@user.parent_name.empty? %>
-            <p><b>Parent Name: <%= @user.parent_name %></b></p>
-          <% end %>
-          <% if !@user.parent_email.empty? %>
-            <p><b>Parent Email: <%= @user.parent_email %></b></p>
+          <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
+          <% else %>
+          <p><b>Parent Name: <%= @user.parent_name %></b></p>
+          <p><b>Parent Email: <%= @user.parent_email %></b></p>
           <% end %>
           <% if @user.user_recieve_emails == true %>
             <p>You have elected to recieve emails</p>
