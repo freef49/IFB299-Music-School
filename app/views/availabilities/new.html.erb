@@ -12,7 +12,7 @@
   <%= f.label :day %>
   <%= f.select :day, options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]), class: 'form-control'%>
   
-  <%= f.label :time %>
+  <%= f.label :time, 'Time(8:00-17:30) half hour increment only'%>
   <%= f.text_field :time, class: 'form-control', placeholder: "HH:MM"%>
   
   <%= f.label :duration %>

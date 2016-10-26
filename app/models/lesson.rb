@@ -9,6 +9,7 @@ class Lesson < ApplicationRecord
   validates :start_date, presence:true
   validates :end_date, presence:true
   validates :lesson_time, presence: true, format: { with: VALID_TIME_REGEX }
+  validates :lesson_type, presence:true
    
 
 end
