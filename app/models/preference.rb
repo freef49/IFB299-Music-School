@@ -5,7 +5,7 @@ class Preference < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   VALID_DAY_REGEX = /[A-z]+/
   VALID_GENDER_REGEX = /[A-z]+/
-  VALID_TIME_REGEX = /\A^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/
+  VALID_TIME_REGEX = /\A^([8-9]|0[8-9]|1[0-7]):[0|3][0]/
   
   validates :user_id,  presence: true, format: { with: VALID_USER_ID_REGEX }
   validates :user_email,  presence: true, length: { maximum: 50 }, format: { with: VALID_EMAIL_REGEX }

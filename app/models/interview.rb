@@ -1,4 +1,5 @@
 class Interview < ApplicationRecord
+  validate :end_before_close
   belongs_to :user
   
   VALID_USER_ID_REGEX = /[0-9]+/
@@ -12,4 +13,11 @@ class Interview < ApplicationRecord
   validates :date, presence: true, length: { maximum: 15 }
   validates :time, presence: true, length: {maximum: 6}, format: { with: VALID_TIME_REGEX }
   validates :duration, presence: true, length: { maximum: 4 }, format: { with: VALID_DURATION_REGEX }
+  
+  def end_before_close
+   if ((time.to_s.to_time)+(3600*duration.to_i)>("18:00".to_time))
+     errors.add(:duration, "cant end after closing")
+   end
+  end
+  
 end
