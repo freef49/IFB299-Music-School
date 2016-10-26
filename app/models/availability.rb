@@ -16,8 +16,10 @@ class Availability < ApplicationRecord
   validates :duration, presence: true, length: { maximum: 2 }, format: { with: VALID_DURATION_REGEX }, inclusion: {in: VALID_DURATIONS}
   
   def end_before_close
+     if (time.to_s.to_time.present?)
    if ((time.to_s.to_time)+(3600*duration.to_i)>("18:00".to_time))
      errors.add(:duration, "cant end after closing")
+   end
    end
   end
 

@@ -1,4 +1,5 @@
 class Lesson < ApplicationRecord
+
   belongs_to :user
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -10,6 +11,22 @@ class Lesson < ApplicationRecord
   validates :end_date, presence:true
   validates :lesson_time, presence: true, format: { with: VALID_TIME_REGEX }
   validates :lesson_type, presence:true
-   
+  
+  # validate :not_in_past
+  # validate :not_before_start
+  
+  
+  # def not_in_past
+  #   if (Date.parse(start_date.to_s).past?)
+  #     errors.add(:start_date, "can not be set in the past")
+  #   end
+  # end
+  
+  # def not_before_start
+  #   if (Date.parse(start_date.to_s)<Date.parse(end_date.to_s))
+  #     errors.add(:end_date, "can not be before the start")
+  #   end
+  # end
+
 
 end
