@@ -1,6 +1,7 @@
 class AvailabilitiesController < ApplicationController
 
   before_action :logged_in_user
+  before_action :teacher_user
   before_action :activated_user
   
   

@@ -1,37 +1,49 @@
 <!-- Display for each users profile -->
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        <%= @user.last_name %>
-        <br>
-        <%= @user.gender %>
-        <br>
-        <%= @user.dob %>
-        <br>
-        <%= @user.facebook_ID %>
-        
-        <% if current_user.email == @user.email || current_user.admin? %>
+<% if (logged_in?|@user.teacher | @user.admin) %>
+    <% provide(:title, @user.name) %>
+    <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.name %>
+          <%= @user.last_name %>
+          <br>
+          <%= @user.gender %>
+          <br>
+          <%= @user.dob %>
+          <br>
+          <%= @user.facebook_ID %>
+          <br>
           <%= @user.email %>
-          <br>
-          <%= @user.address %>
-          <br>
+          
           <% if @user.teacher == true %>
-          <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
-          <% else %>
-          <p><b>Parent Name: <%= @user.parent_name %></b></p>
-          <p><b>Parent Email: <%= @user.parent_email %></b></p>
+            <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
           <% end %>
-          <% if @user.user_recieve_emails == true %>
-            <p>You have elected to recieve emails</p>
-          <% else %>
-            <p>You have elected to not recieve emails</p>
+          
+           <% if logged_in? %>
+          <% if current_user.email == @user.email || current_user.admin? %>
+    
+            <%= @user.address %>
+            <br>
+            
+            <% if !(@user.teacher | @user.admin) %>
+            <p><b>Parent Name: <%= @user.parent_name %></b></p>
+            <p><b>Parent Email: <%= @user.parent_email %></b></p>
+            <% end %>
+            
+            <% if @user.user_recieve_emails == true %>
+              <p>You have elected to recieve emails</p>
+            <% else %>
+              <p>You have elected to not recieve emails</p>
+            <% end %>
+          
           <% end %>
-        <% end %>
-      </h1>
-    </section>
-  </aside>
-</div>
+          <% end %>
+          
+          
+        </h1>
+      </section>
+    </aside>
+  </div>
+<% end %>

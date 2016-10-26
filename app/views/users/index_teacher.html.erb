@@ -6,8 +6,18 @@
 
 <ul class="users">
   <% @users.each do |user| %>
-    <% if user.teacher? %>
-    <%= render user %>
+    <% if user.teacher?%>
+    
+      <% if user.activated?  %>
+        <%= render user %>
+        
+      <% else %>
+        <% if logged_in? && current_user.admin?%>
+          <%= render user %>
+           <% end %>
+      <% end %>
+      
+      
     <% end %>
   <% end %>
 </ul>

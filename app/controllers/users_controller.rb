@@ -61,6 +61,10 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
+  def delete
+    @users = User.find(params[:id])
+  end
+  
   def make_admin
     User.find(params[:id]).m_admin
     flash[:success] = "User promoted to admin"

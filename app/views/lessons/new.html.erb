@@ -25,9 +25,9 @@
   <%= f.text_field :lesson_time, class: 'form-control', placeholder: "HH:MM"%>
   
   <%= f.label :lesson_type %>
-  <%= f.collection_select :lesson_type, User.where(:teacher => true), :teacher_qualifications, :teacher_qualifications, multiple:false, clase: 'form-control'%>
-  
-  
+  <%= f.collection_select :lesson_type,  Skill.where(:instrument_skill => 5), :instrument, :instrument, multiple:false, clase: 'form-control'%>
+                                        
+    
   <%= f.submit "Create Lesson", class: "btn btn-primary" %>
   <% end %>
   </div>
