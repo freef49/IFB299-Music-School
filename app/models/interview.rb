@@ -3,7 +3,7 @@ class Interview < ApplicationRecord
   
   VALID_USER_ID_REGEX = /[0-9]+/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  VALID_TIME_REGEX = /\A^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/
+  VALID_TIME_REGEX = /\A^([8-9]|0[8-9]|1[0-7]):[0|3][0]/
   VALID_DURATION_REGEX = /\A[0-9]{1}\.?[0-9]*/
   
   validates :user_id,  presence: true, format: { with: VALID_USER_ID_REGEX }
