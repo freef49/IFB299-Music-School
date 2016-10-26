@@ -16,33 +16,24 @@
           <%= @user.facebook_ID %>
           <br>
           <%= @user.email %>
-          
           <% if @user.teacher == true %>
             <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
-            
           <% end %>
-          
-           <% if logged_in? %>
+            <% if logged_in? %>
           <% if current_user.email == @user.email || current_user.admin? %>
-    
             <%= @user.address %>
             <br>
-            
             <% if !(@user.teacher | @user.admin) %>
-            <p><b>Parent Name: <%= @user.parent_name %></b></p>
-            <p><b>Parent Email: <%= @user.parent_email %></b></p>
+              <p><b>Parent Name: <%= @user.parent_name %></b></p>
+              <p><b>Parent Email: <%= @user.parent_email %></b></p>
             <% end %>
-            
             <% if @user.user_recieve_emails == true %>
               <p>You have elected to recieve emails</p>
             <% else %>
               <p>You have elected to not recieve emails</p>
             <% end %>
-          
           <% end %>
           <% end %>
-          
-          
         </h1>
       </section>
     </aside>
