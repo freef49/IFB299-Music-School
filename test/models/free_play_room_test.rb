@@ -36,7 +36,7 @@ class FreePlayRoomTest < ActiveSupport::TestCase
     @free_play_room.user_id = "Cat"
     assert_not @free_play_room.valid?
   end
-  test "email validation should reject invalid addresses" do
+  test "user_email validation should reject invalid addresses" do
     invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
