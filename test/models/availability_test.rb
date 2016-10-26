@@ -30,7 +30,6 @@ class AvailabilityTest < ActiveSupport::TestCase
     @availability.duration = "     "
     assert_not @availability.valid?
   end
-  
   test "user_id should be a valid number" do
     @availability.user_id = "Cat"
     assert_not @availability.valid?
@@ -43,6 +42,7 @@ class AvailabilityTest < ActiveSupport::TestCase
       assert_not @availability.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
+  
   test "day should be string" do
     @availability.day = "401"
     assert_not @availability.valid?
