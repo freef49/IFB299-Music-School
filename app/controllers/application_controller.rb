@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     
     def activated_user
       unless current_user.activated?
-       flash[:info]="You do not have permission to input availability yet"
+       flash[:info]="You do not have permission to input availability yet. Please contact Mika for information on becoming activated"
        redirect_to(root_url) 
       end
     end

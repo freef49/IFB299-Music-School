@@ -41,10 +41,10 @@
   <% @interviews.each do |interview| %>
     <% if interview.teacher_email == current_user.email %>
       <tr>
-      <td>"Mika Williams"</td>
+      <td>Mika Williams</td>
       <td><%= interview.date%></td>
       <td><%= interview.time%></td>
-      <td>"Activation Interview"</td>
+      <td>Orientation</td>
       </tr>
     <% end %>
   <% end %>
