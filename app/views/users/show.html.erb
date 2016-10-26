@@ -16,23 +16,31 @@
           <%= @user.facebook_ID %>
           <br>
           <%= @user.email %>
+          
+          <% if logged_in? %>
+            <% if current_user.email == @user.email || current_user.admin? %>
+              <p><%= @user.address %></p>
+                <% if !(@user.teacher | @user.admin) %>
+                  <p><b>Parent Name: <%= @user.parent_name %></b></p>
+                  <p><b>Parent Email: <%= @user.parent_email %></b></p>
+                <% end %>
+              <% if @user.user_recieve_emails == true %>
+                <p>You have elected to recieve emails</p>
+              <% else %>
+                <p>You have elected to not recieve emails</p>
+              <% end %>
+            <% end %>
+          <% end %>
+          
           <% if @user.teacher == true %>
-            <p><b>Qualifications: <%= @user.teacher_qualifications %></b></p>
-          <% end %>
-            <% if logged_in? %>
-          <% if current_user.email == @user.email || current_user.admin? %>
-            <%= @user.address %>
-            <br>
-            <% if !(@user.teacher | @user.admin) %>
-              <p><b>Parent Name: <%= @user.parent_name %></b></p>
-              <p><b>Parent Email: <%= @user.parent_email %></b></p>
+            <% if logged_in?%>
+              <% @availabilities.each do |availability| %>
+                  <% if availability.user_email == @user.email %>
+                    <p>Available from <%=availability.time %> on <%=availability.day %>s for <%=availability.duration%> hours</p>
+                <% end %>
+              <% end %>
             <% end %>
-            <% if @user.user_recieve_emails == true %>
-              <p>You have elected to recieve emails</p>
-            <% else %>
-              <p>You have elected to not recieve emails</p>
-            <% end %>
-          <% end %>
+            <p>Qualifications: <%= @user.teacher_qualifications %></p>
           <% end %>
         </h1>
       </section>
