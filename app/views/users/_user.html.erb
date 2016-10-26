@@ -4,12 +4,14 @@
   <%= link_to user.name + " " + user.last_name, user %>
   <br>
   <%= user.email %>
+  <% if logged_in? %>
   <% if current_user.admin? && !current_user?(user) %>
     <br>
     <a href="<%= delete_user_path(user) %>" class="btn btn-danger forms-btn" role="button">Delete</a>
     <a href="#" class="btn btn-info forms-btn" role="button">Make Admin</a>
     <% if user.teacher? && !user.activated?%>
       <a href="<%= edit_account_activation_url(user) %>" class="btn btn-success forms-btn"  role="button">Activate Teacher</a>
+     <% end %>
      <% end %>
      <% end %>
 </li>
