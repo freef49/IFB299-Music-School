@@ -7,38 +7,47 @@
 <br><br>
 
 <table class="table table-hover" summary="Lessons">
-  <thead>
+<thead>
   <tr class="header">
-    
   <th>Lesson With</th>
   <th>Day</th>
   <th>Time</th>
   <th>Type</th>
   </tr>
-  </thead>
-  
-  <tbody>
+</thead>
+<tbody>
   <% @lessons.each do |lesson| %>
-  <% if lesson.student_email == current_user.email %>
-  <tr>
-    <td><%= lesson.user_email%></td>
-    <td><%= lesson.day%></td>
-    <td><%= lesson.lesson_time%></td>
-    <td><%= lesson.lesson_type%></td>
-      <% end %>
-  </tr>
+  
+    <% if lesson.student_email == current_user.email %>
+      <tr>
+      <td><%= lesson.user_email%></td>
+      <td><%= lesson.day%></td>
+      <td><%= lesson.lesson_time%></td>
+      <td><%= lesson.lesson_type%></td>
+      </tr>
+    <% end %>
   
 
-  <% if lesson.user_email == current_user.email %>
-  <tr>
-    
-    <td><%= lesson.student_email%></td>
-    <td><%= lesson.day%></td>
-    <td><%= lesson.lesson_time%></td>
-    <td><%= lesson.lesson_type%></td>
-
-      <% end %>
-  </tr>
+    <% if lesson.user_email == current_user.email %>
+      <tr>
+      <td><%= lesson.student_email%></td>
+      <td><%= lesson.day%></td>
+      <td><%= lesson.lesson_time%></td>
+      <td><%= lesson.lesson_type%></td>
+      </tr>
+    <% end %>
   <% end %>
+  
+  <% @interviews.each do |interview| %>
+    <% if interview.teacher_email == current_user.email %>
+      <tr>
+      <td>"Mika Williams"</td>
+      <td><%= interview.date%></td>
+      <td><%= interview.time%></td>
+      <td>"Activation Interview"</td>
+      </tr>
+    <% end %>
+  <% end %>
+  
   </tbody>
 </table>

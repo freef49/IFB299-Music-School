@@ -11,6 +11,7 @@ before_action :logged_in_user
   
   def index
     @lessons = Lesson.all
+    @interviews = Interview.all
   end
   
   def create
