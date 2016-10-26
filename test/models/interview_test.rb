@@ -55,10 +55,10 @@ class InterviewTest < ActiveSupport::TestCase
       assert_not @interview.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
-  test "date should be date format" do
-    @interview.date = "20-10-2017"
-    assert_not @interview.valid?
-  end
+  # test "date should be date format" do
+  #   @interview.date = "20-10-2017"
+  #   assert_not @interview.valid?
+  # end
   test "time should be specific format" do
     @interview.time = "19/43"
     assert_not @interview.valid?
