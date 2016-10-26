@@ -34,10 +34,16 @@
           
           <% if @user.teacher == true %>
             <% if logged_in?%>
+            <% @available=false %>
+            
               <% @availabilities.each do |availability| %>
-                  <% if availability.user_email == @user.email %>
-                    <p>Available from <%=availability.time %> on <%=availability.day %>s for <%=availability.duration%> hours</p>
+                <% if availability.user_email == @user.email %>
+                  <p>Available from <%=availability.time %> on <%=availability.day %>s for <%=availability.duration%> hours</p>
+                  <% @available=true %>
                 <% end %>
+              <% end %>
+              <% if @available==true && !(current_user.teacher? | current_user.admin?)%> 
+                <a href="<%= new_lesson_path(:teacher => @user.email)%>" class="btn btn-success forms-btn" role="button">Book Lesson</a>
               <% end %>
             <% end %>
             <p>Qualifications: <%= @user.teacher_qualifications %></p>

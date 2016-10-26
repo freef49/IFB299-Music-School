@@ -8,9 +8,9 @@
   
   <%= f.hidden_field :student_email, :value => current_user.email, class: 'form-control'%>
   <%= f.hidden_field :user_id, :value => current_user.id, class: 'form-control' %>
+  <%= f.hidden_field :user_email, :value =>params[:teacher], class: 'form-control' %>
   
-  <%= f.label :user_email, "Teacher Email" %>
-  <%= f.collection_select :user_email, User.where(:teacher => true), :email, :email, multiple: false, class: 'form-control' %>
+  
   
   <%= f.label :start_date %>
   <%= f.date_field :start_date, class: 'form-control', placeholder: "11/11/2016"%>
@@ -25,7 +25,7 @@
   <%= f.text_field :lesson_time, class: 'form-control', placeholder: "HH:MM"%>
   
   <%= f.label :lesson_type %>
-  <%= f.collection_select :lesson_type,  Skill.all, :instrument, :instrument, multiple:false, clase: 'form-control'%>
+  <%= f.collection_select :lesson_type,  Skill.where(user_email: params[:teacher]), :instrument, :instrument, multiple:false, clase: 'form-control'%>
                                         
     
   <%= f.submit "Create Lesson", class: "btn btn-primary" %>

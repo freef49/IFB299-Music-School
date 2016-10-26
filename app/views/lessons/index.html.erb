@@ -1,8 +1,6 @@
 <% provide(:title, "My Lessons") %>
 <h1>Your Current Lessons</h1>
-<% if !(current_user.teacher? | current_user.admin?)%>
-<a href="<%= new_lesson_path %>" class="btn btn-success" role="button">Add Lesson</a>
- <% end %>
+
 
 <br><br>
 
