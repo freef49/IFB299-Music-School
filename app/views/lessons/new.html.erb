@@ -22,7 +22,7 @@
   <%= f.collection_select :day,  Availability.where(user_email: params[:teacher]), :day, :day, multiple:false, clase: 'form-control'%>
   
   
-  <%= f.label :lesson_time, 'Time(8:00-17:30) half hour increment only' %>
+  <%= f.label :lesson_time, 'Time(8:00-16:30) half hour increment only' %>
   <%= f.text_field :lesson_time, class: 'form-control', placeholder: "HH:MM"%>
   
   <%= f.label :lesson_type %>

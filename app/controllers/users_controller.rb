@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @availabilities = Availability.all
+    @skills = Skill.all
   end
 
   def new

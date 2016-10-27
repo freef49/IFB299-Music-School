@@ -14,6 +14,17 @@ class Lesson < ApplicationRecord
   
   validate :not_in_past
   validate :not_before_start
+  # validate :start_while_available
+  
+  
+  # def start_while_available
+  #   
+  #   if (!(time.to_s=~VALID_TIME_REGEX).nil?)
+  #     if ((time.to_s.to_time)+(3600*duration.to_f)>("18:00".to_time))
+  #       errors.add(:duration, "Must start during teacher availability")
+  #     end
+  #   end
+  # end
   
   
   def not_in_past
