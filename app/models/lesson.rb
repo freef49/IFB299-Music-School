@@ -13,7 +13,7 @@ class Lesson < ApplicationRecord
   validates :lesson_type, presence:true
   
   validate :not_in_past
-  validate :not_before_start
+  # validate :not_before_start
   # validate :start_while_available
   
   
@@ -36,13 +36,13 @@ class Lesson < ApplicationRecord
   end
   
   
-  def not_before_start
-    if ( (!(start_date.to_s=~VALID_DATE_REGEX).nil?) && (!(end_date.to_s=~VALID_DATE_REGEX).nil?))
-      if (Date.parse(start_date.to_s)<Date.parse(end_date.to_s))
-        errors.add(:end_date, "can not be before the start")
-      end
-    end
-  end
+  # def not_before_start
+  #   if ( (!(start_date.to_s=~VALID_DATE_REGEX).nil?) && (!(end_date.to_s=~VALID_DATE_REGEX).nil?))
+  #     if (Date.parse(start_date.to_s)<Date.parse(end_date.to_s))
+  #       errors.add(:end_date, "can not be before the start")
+  #     end
+  #   end
+  # end
 
 
 end
