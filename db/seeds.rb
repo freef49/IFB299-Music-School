@@ -32,13 +32,13 @@ user = User.create!(name:  "Mika",
 Interview.create!(user_email: user.email,
                       user_id: user.id, 
                       teacher_email: "teacher1@teacher.org", 
-                      date: "12/11/2016",
+                      date: "12/12/2016",
                       time: "11:30",
                       duration: "2")
 Interview.create!(user_email: user.email,
                       user_id: user.id, 
                       teacher_email: "teacher4@teacher.org", 
-                      date: "13/11/2016",
+                      date: "13/12/2016",
                       time: "09:30",
                       duration: "1.5")
 
@@ -82,17 +82,29 @@ Interview.create!(user_email: user.email,
                password_confirmation: password,
                teacher: teacher,
                admin: admin,
-               activated: false,
+               activated: true,
                activated_at: Time.zone.now)
                
   
+  numAvailabilities.times do |a|
+    # Variables for the Availability table of teacher
+    day = daysOpen[Faker::Number.between(0, 4)]
+    time = "#{Faker::Number.between(8, 13)}:00"
+    duration = Faker::Number.between(1, 3)
+  
+    Availability.create!(user_email: user.email,
+                      user_id: user.id, 
+                      day: day, 
+                      time: time,
+                      duration: duration)
+  end
   
   numSkills.times do |b|
      # Variables for the Skills table of teacher
     instrument = instrumentsAvailable[Faker::Number.between(0, 4)]
-    instrument_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
+    instrument_skill = "#{Faker::Number.between(1, 5)}.0"
     language = languagesAvailable[Faker::Number.between(0, 4)]
-    language_skill = "#{Faker::Number.between(1, 5)}.#{Faker::Number.between(1, 9)}"
+    language_skill = "#{Faker::Number.between(1, 5)}.0"
   
     Skill.create!(user_email: user.email,
                       user_id: user.id, 
@@ -164,9 +176,9 @@ end
                
   numFreePlayRoomSessions.times do |a|
     # Variables for the freePlayRoom table of students
-    date = "#{Faker::Number.between(1, 30)}/#{Faker::Number.between(1, 12)}/2017"
-    time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
-    duration = Faker::Number.between(1, 5)
+    date = "#{Faker::Number.between(28, 30)}/#{Faker::Number.between(11, 12)}/2017"
+    time = "#{Faker::Number.between(8, 13)}:00}"
+    duration = Faker::Number.between(1, 3)
   
     FreePlayRoom.create!(user_email: user.email,
                       user_id: user.id, 
@@ -178,7 +190,7 @@ end
   numPreferences.times do |b|
     # Variables for the preferences table of students
     preferred_day = daysOpen[Faker::Number.between(0, 4)]
-    preferred_time = "#{Faker::Number.between(10, 20)}:#{Faker::Number.between(10, 59)}"
+    preferred_time = "#{Faker::Number.between(8, 13)}:00"
     instrument = instrumentsAvailable[Faker::Number.between(0, 4)]
     preferred_teacher_language = languagesAvailable[Faker::Number.between(0, 4)]
     genderDecider = Faker::Number.between(1, 3)
