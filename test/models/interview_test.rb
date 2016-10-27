@@ -3,7 +3,7 @@ require 'test_helper'
 class InterviewTest < ActiveSupport::TestCase
   def setup
     @interview = Interview.new(user_id: "1", user_email: "mika@music.com", teacher_email: "teachernum1@example.gov",
-                              date: "16/10/2016", time: "10:30", duration: "2")
+                              date: "29/12/2018", time: "10:30", duration: "2")
   end
   
   test "Should be Valid" do
@@ -55,10 +55,10 @@ class InterviewTest < ActiveSupport::TestCase
       assert_not @interview.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
-  # test "date should be date format" do
-  #   @interview.date = "20-10-2017"
-  #   assert_not @interview.valid?
-  # end
+  test "date should be date format" do
+    @interview.date = "20-10-2017"
+    assert_not @interview.valid?
+  end
   test "time should be specific format" do
     @interview.time = "19/43"
     assert_not @interview.valid?
