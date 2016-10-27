@@ -1,0 +1,184 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// All pages
+
+body{
+    background-image: url('https://www.email.stevef.xyz/geometry.png');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+
+.top-div{
+    margin-top: 5.5rem;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+h1{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 5em;
+}
+h2{
+    font-size: 1.85rem;
+}
+
+#logo{
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    background-image: url('https://www.email.stevef.xyz/logo-small.png');
+    background-repeat: no-repeat;
+}
+
+#logo:hover{
+    filter: invert(100%);
+}
+
+.navbar, .navbar-inverse .navbar-nav > li > a{
+    background-color: #eee;
+    color: #111;
+}
+
+.navbar-inverse .navbar-nav > li:hover > a{
+    color: #888;
+}
+
+//Home page
+.carousel-btn{
+    font-size:25px;
+    box-shadow: 0px 0px 50px #fff;
+}
+
+.home-instrument-image{
+    width: 100%;
+    height: 20rem;
+    background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+.home-icon{
+    display: block;
+    
+    -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.home-icon:hover, .home-icon:hover > h2{
+    color: #0288D1;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0);
+    
+ 
+
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+// carousel
+
+.carousel-div-wrapper{
+    margin-bottom: 5.5rem;
+}
+
+.carousel-image{
+    box-shadow: 11px 8px 3px;
+    height:700px;
+    width:100%;
+    repeat:no-repeat;
+    background-size: cover;
+	background-position: center;
+}
+.carousel-heading{
+
+    font-size: 2.5rem;
+}
+
+.carousel-heading-link{
+    color:#337ab7;
+}
+// Contact page
+.contact-image{
+    margin:auto;
+    margin-top: 5.5rem;
+    height:300px;
+    width:300px;
+    repeat:no-repeat;
+    background-size: cover;
+	background-position: center;
+}
+.contact-figcaption{
+        padding-left: 32.5rem;
+}
+
+// about
+.about-text{
+    letter-spacing: 1px;
+    line-height: 1.5;
+    padding-top: 10rem;
+}
+
+// ALL IMAGES
+
+// home page
+
+#learning-slider-1{
+    background-image: url('https://www.email.stevef.xyz/learning-slider-1.png');
+}
+#learning-slider-2{
+    background-image: url('https://www.email.stevef.xyz/learning-slider-2.jpg');
+}
+#learning-slider-3{
+    background-image: url('https://www.email.stevef.xyz/learning-slider-3.jpg');
+}
+
+#guitar-icon{
+    background-image: url('https://www.email.stevef.xyz/guitar-icon.png');
+}
+#percussion-icon{
+    background-image: url('https://www.email.stevef.xyz/percussion-icon.png');
+}
+#piano-icon{
+    background-image: url('https://www.email.stevef.xyz/piano-icon.png');
+}
+#saxophone-icon{
+    background-image: url('https://www.email.stevef.xyz/saxophone-icon.png');
+}
+#trumpet-icon{
+    background-image: url('https://www.email.stevef.xyz/trumpet-icon.png');
+}
+#violin-icon{
+    background-image: url('https://www.email.stevef.xyz/violin-icon.png');
+}
+#mikawilliams{
+    background-image: url('https://www.email.stevef.xyz/mikawilliams.jpg');
+}
+
+// About
+#teacher1{
+    background-image: url('https://www.email.stevef.xyz/teacher1.jpg');
+}
+#teacher2{
+    background-image: url('https://www.email.stevef.xyz/teacher2.jpg');
+}
+#teacher3{
+    background-image: url('https://www.email.stevef.xyz/teacher3.jpg');
+}
+#teacher4{
+    background-image: url('https://www.email.stevef.xyz/teacher4.jpg');
+}
+
